@@ -1,0 +1,8 @@
+# Ignore Node Modules folder
+node_modules
+
+# Ignore VSCode folder
+.vscode
+
+# Ignore ZoneIdentifier files
+*ZoneIdentifier
