@@ -1,1 +1,79 @@
 /* This is the main styles file for the DevWeek project */
+
+/* Install Lato font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* GLOBAL VARIABLES */
+:root {
+  /* Define the primary font */
+  --primary-font: 'Lato', sans-serif;
+
+  /* Define different font weights */
+  --light-weight: 300;
+  --regular-weight: 400;
+  --bold-weight: 700;
+  --black-weight: 900;
+
+  /* Define the color pallete */
+  --primary-color: #d64a34;
+  --light-primary-color: #d88567;
+  --secondary-color: #303136;
+  --gray-color: #949597;
+  --light-gray-color: #c1c2c4;
+  --light-white-color: #f5f5f5;
+}
+
+/* RESET DEFAULT BROWSER STYLES */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--primary-font);
+  background-color: var(--light-white-color);
+}
+
+body {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 100rem;
+  padding: 0 1.4rem;
+  margin: 0 auto;
+}
+
+.banner {
+  width: 100%;
+}
+
+#program {
+  background-color: var(--secondary-color);
+  padding: 2rem 0;
+  color: var(--light-gray-color);
+}
+
+#program span {
+  color: var(--primary-color);
+  font-weight: var(--black-weight);
+}
+
+#program ul li{
+  list-style: none;
+  padding: 1.5rem 1rem;
+}
+/* MEDIA QUERIES START HERE */
+
+/* Styles for 768px and above screen size */
+@media screen and (min-width: 768px) {
+  html {
+    background-color: #fff;
+  }
+}
