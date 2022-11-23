@@ -321,17 +321,6 @@ p {
   width: 100%;
 }
 
-#partners .darker-imgs {
-  background-color:
-    linear-gradient(
-      rgba(200, 200, 200, 0.88),
-      rgba(200, 200, 200, 0.88));
-  position: absolute;
-  height: 10rem;
-  width: 100%;
-  z-index: 2;
-}
-
 /* FOOTER */
 #footer {
   padding: 3rem 0;
