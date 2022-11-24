@@ -7,7 +7,8 @@
 :root {
   /* Define the primary font */
   --primary-font: 'Lato', sans-serif;
-  font-size: 62.5%;
+  font-size: calc(16px + (42 - 16) * ((100vw - 375px) / (1800 - 375)));
+  /* font-size: 62.5%; */
 
   /* Define different font weights */
   --light-weight: 300;
@@ -41,15 +42,19 @@ html {
   background-color: var(--light-white-color);
 }
 
+/* body {
+  font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw -
+  [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+} */
+
 body {
-  font-size: 1rem;
   color: var(--secondary-color);
+  min-width: 30rem;
 }
 
 .container {
   width: 100%;
-  /* max-width: 100rem; */
-  padding: 0 1.4rem;
+  padding: 0 1rem;
   margin: 0 auto;
 }
 
@@ -57,20 +62,64 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: var(--bold-weight);
+  font-size: 0.45rem;
+  padding: 0.5rem;
+  display: inline-block;
+  transition: all 200ms ease-out;
+}
+
+a:hover {
+  color: var(--primary-color);
+  filter: saturate(4);
+  scale: 1.05;
+}
+
 .btn {
+  width: 85%;
   background-color: var(--primary-color);
   text-decoration: none;
   color: #fff;
   font-weight: var(--bold-weight);
-  padding: 1.5em 3em;
+  font-size: 1.2rem;
+  padding: 1.8em 3em;
   display: block;
-  margin: 2.5em 10%;
-  font-size: 1.8rem;
+  margin: 2.5em auto;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 200ms ease-out;
 }
+
+.btn-join {
+  letter-spacing: 0.015em;
+}
+
+.btn-join::after {
+  content: "Join DW Global Summit 2022";
+}
+
+.btn-join:hover {
+  background-color: var(--light-gray-color);
+  color: var(--primary-color);
+  scale: none;
+}
+
+.btn-more::before {
+  content: "More";
+}
+
+.btn-more:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+  filter:saturate(4);
+}
+
+/* NAVBAR STYLES */
 
 /* HEADLINE STYLES */
 .banner {
@@ -90,16 +139,12 @@ img {
   padding: 5em 0 10em;
 }
 
-p {
-  font-size: 1.5rem;
-}
-
 .banner h1 {
-  font-size: 3.5rem;
+  font-size: 2.6rem;
+  line-height: 2.7rem;
   font-weight: var(--black-weight);
   color: var(--primary-color);
-  line-height: 3.5rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.005em;
   background: url(./bgimgs/banner-inked.jpg);
   background-position: -15% 55%;
   -webkit-background-clip: text;
@@ -107,30 +152,30 @@ p {
 }
 
 .banner .slogan {
-  font-size: 2.2rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   font-weight: var(--bold-weight);
   color: var(--primary-color);
-  line-height: 3.4rem;
-  margin-top: 5rem;
 }
 
 .banner .event-text {
   background-color: var(--very-light-gray-color);
   border: 3px solid #fff;
-  padding: 2rem;
-  line-height: 2.5rem;
-  margin: 2rem 0;
+  padding: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  margin: 1em 0;
 }
 
 .banner .event-date {
-  font-size: 3rem;
+  font-size: 1.8rem;
   font-weight: var(--black-weight);
-  letter-spacing: 0.1rem;
-  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
 }
 
 .banner .event-place {
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-weight: var(--bold-weight);
 }
 
@@ -146,9 +191,8 @@ p {
 #partners h2 {
   color: #fff;
   font-weight: var(--bold-weight);
-  font-size: 2.2rem;
   text-align: center;
-  padding: .7em;
+  padding: 0.7em;
 }
 
 #program hr,
@@ -162,20 +206,26 @@ p {
 #program ul {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin: 3rem auto;
+  gap: 0.7rem;
+  margin: 2.5rem auto;
 }
 
-#program ul li{
+#program ul li {
   list-style: none;
-  padding: 0 1.6rem;
-  height: 9rem;
+  height: 6rem;
+  padding: 1.5em;
   background-color: rgba(253, 253, 253, 0.05);
   display: flex;
-  font-size: 1.6rem;
-  line-height: 2.2rem;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
   align-items: center;
-  gap: 4%;
+  gap: 1em;
+  transition: all 150ms ease-in-out;
+}
+
+#program ul li:hover {
+  scale: 1.02;
+  border: 2px solid #fff;
 }
 
 #program ul li span {
@@ -185,6 +235,7 @@ p {
 
 #program ul li strong {
   color: var(--primary-color);
+  font-size: 1.1rem;
   font-weight: var(--black-weight);
   width: 20%;
 }
@@ -195,7 +246,7 @@ p {
 
 /* FEATURED SPEAKERS STYLES */
 #speakers {
-  padding: 3rem 0;
+  padding: 2rem 0 3rem;
 }
 
 #speakers h2 {
@@ -204,26 +255,26 @@ p {
 
 #speakers ul {
   list-style: none;
-  padding: 4rem 0;
+  padding: 3rem 0 2rem;
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 1em;
 }
 
 #speakers .speaker {
   display: flex;
-  height: 22rem;
-  gap: 3em;
+  height: 19rem;
+  justify-content: space-between;
 }
 
 #speakers .speaker .speaker-photo {
-  width: 25%;
+  width: 28%;
   position: relative;
 }
 
 .speaker-photo .squares {
-  height: 60px;
-  width: 60px;
+  height: 4rem;
+  width: 4rem;
   background-image: url(./bgimgs/pattern.svg);
   position: relative;
   top: 0;
@@ -232,53 +283,54 @@ p {
 
 .speaker-photo img {
   position: absolute;
-  top: 1.5em;
-  left: 1.5em;
+  top: 0.95em;
+  left: 0.95em;
 }
 
 #speakers .speaker .speaker-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.8em;
-  width: 70%;
+  width: 65%;
 }
 
 .speaker-info strong {
+  font-size: 1.4rem;
   font-weight: var(--black-weight);
-  font-size: 1.8rem;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.01em;
 }
 
 .speaker-info span {
+  font-size: 1.06rem;
   font-weight: var(--bold-weight);
   color: var(--primary-color);
-  font-size: 1.45rem;
 }
 
 .speaker-info p {
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
 }
 
 #speakers .speaker-dash {
-  width: 6%;
-  margin: 0 0 0.5em;
+  width: 8%;
+  margin: 0.6em 0;
   border: 1px solid var(--light-gray-color);
 }
 
 .btn-more {
   text-transform: uppercase;
+  width: 100%;
   margin: 0;
   background-color: transparent;
   border: 2px solid var(--light-gray-color);
   color: var(--secondary-color);
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 1em;
 }
 
-.btn-more .arrow-down {
+.btn-more .arrow-icon::after {
   display: inline-block;
+  content: "";
   background: url('./icons/arrow-down.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -287,7 +339,7 @@ p {
   margin-left: 0.5em;
 }
 
-/* PARTNERS */
+/* PARTNERS STYLES*/
 #partners {
   padding: 2rem 0;
   background-color: var(--secondary-color);
@@ -299,7 +351,7 @@ p {
 
 .partners-logos {
   justify-content: space-evenly;
-  margin: 3rem 1rem;
+  margin: 2em 1em;
 }
 
 .partners-logos ul {
@@ -308,28 +360,35 @@ p {
   width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 4%;
+  gap: 1em;
 }
 
 .partners-logos .partner-logo {
   display: inline-block;
   width: 28%;
-  padding: 0.5em;
+  padding: 0.3em;
 }
 
 #partners img {
   width: 100%;
+  filter: saturate(0);
+  transition: all 200ms ease-in-out;
 }
 
-/* FOOTER */
+#partners img:hover {
+  scale: 1.2;
+  filter: saturate(1);
+}
+
+/* FOOTER STYLES */
 #footer {
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 #footer .footer-text {
   display: flex;
   width: 100%;
-  gap: 10%;
+  gap: 1em;
   justify-content: center;
   align-items: center;
 }
@@ -341,8 +400,8 @@ p {
 
 #footer p {
   width: 40%;
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
   font-weight: var(--bold-weight);
 }
 
@@ -351,12 +410,253 @@ p {
 /* Styles for 768px and above screen size */
 @media screen and (min-width: 768px) {
   /* GENERAL SETTINGS */
-  html {
-    background-color: #fff;
-  }
-
   .container {
-    max-width: 90rem;
+    max-width: min(90%, 30rem);
+    padding: 0 5%;
   }
 
+  /* HEADER SECTION */
+  /* #header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 4px var(--light-gray-color);
+    position: sticky;
+    z-index: 1;
+  }
+
+  nav {
+    list-style: none;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .mini-nav {
+    max-width: min(90%, 30rem);
+  }
+
+  .main-nav {
+    background-color: var(--almost-white-color);
+    max-width: min(90%, 30rem);
+  }
+
+  .mininav ul,
+  .main-nav ul {
+  }
+
+  nav ul li {
+    display: inline-block;
+  }
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+    font-weight: var(--black-weight);
+    font-size: 0.9rem;
+    width: 24%;
+    transition: scale 300ms ease-out;
+  }
+
+  nav .logo:hover {
+    filter: saturate(4);
+    scale: 1.2;
+  }
+
+  nav .logo img {
+    margin-right: 0.4em;
+  }
+
+  nav span {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    background-image: url(./logos/dev-week-logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.25rem;
+  }
+
+  .logo strong {
+    font-weight: var(--bold-weight);
+    color: var(--primary-color);
+  }
+
+
+  nav .campaign {
+    width: 4rem;
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    text-align: center;
+    padding: 0.7em 0.5em;
+    transition: all 300ms ease-in-out;
+  }
+
+  nav .campaign:hover {
+    scale: 1.1;
+    filter: saturate(4);
+  } */
+
+  /* HEADLINE STYLES FOR DESKTOP */
+  .banner {
+    padding: 4em 0 5em;
+  }
+
+  .banner .event-text {
+    max-width: min(40rem, 75%);
+    font-size: 0.65rem;
+    line-height: 0.9rem;
+  }
+
+  .banner .event-date {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .banner .event-place {
+    font-size: 0.75rem;
+  }
+
+  /* PROGRAM STYLES FOR DESKTOP */
+  #program ul {
+    flex-direction: row;
+    gap: 0.15rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1.5rem auto;
+  }
+
+  #program ul li{
+    width: 19.5%;
+    min-height: 7rem;
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 0.01em;
+  }
+
+  #program ul li span {
+    display: block;
+    width: 25%;
+  }
+
+  #program ul li strong {
+    width: 100%;
+    text-align: center;
+    font-size: 0.5rem;
+  }
+
+  #program ul li p {
+    width: 100%;
+    text-align: center;
+    font-size: 0.45rem;
+    line-height: 0.55rem;
+  }
+
+  .btn {
+    width: auto;
+    background-color: transparent;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #fff;
+    font-size: 0.6rem;
+    margin: 0 auto;
+  }
+
+  .btn-join {
+    padding: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-join::after {
+    content: "See the Whole Program";
+  }
+
+  .btn-join:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+
+  /* SEPEAKERS STYLES FOR DESKTOP */
+  #speakers {
+    padding: 2rem;
+  }
+
+  #speakers ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+
+  #speakers .speaker {
+    width: 47.5%;
+    height: 11rem;
+  }
+
+  #speakers .speaker .speaker-photo {
+    width: 25%;
+  }
+
+  .speaker-photo .squares {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .speaker-photo img {
+    top: 0.4em;
+    left: 0.4em;
+  }
+
+  #speakers .speaker .speaker-info {
+    width: 68%;
+  }
+
+  .speaker-info strong {
+    font-size: 0.8rem;
+  }
+
+  .speaker-info span {
+    font-size: 0.6rem;
+  }
+
+  .speaker-info p {
+    font-size: 0.5rem;
+    line-height: 0.7rem;
+  }
+
+  #speakers .speaker-dash {
+    margin: 0.3em 0;
+  }
+
+  .btn-more {
+    display: none;
+  }
+
+  /* PARTNERS STYLES FOR DESKTOP */
+  .partners-logos {
+    margin: 1em 0.5em
+  }
+
+  .partners-logos ul {
+    flex-wrap: nowrap;
+  }
+
+  .partners-logos .partner-logo {
+    width: 20%;
+    padding: 0.05em;
+  }
+
+  /* FOOTER STYLES FOR DESKTOP */
+  #footer .footer-text {
+    gap: 0.5em;
+  }
+
+  #footer img {
+    width: 10%;
+    padding: 0.2em;
+  }
+  #footer p {
+    width: 30%;
+    font-size: 0.6rem;
+    line-height: 0.7rem;
+  }
 }
