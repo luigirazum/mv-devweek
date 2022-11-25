@@ -28,7 +28,7 @@ const speakers = [
           not writing Phil is exploring new tech or presenting
           at conferences physically & virtually around the
           world - from DeveloperWeek to JAXLondon.`,
-    photo: './assets/imgs/phil-wilkins.jpeg'
+    photo: './assets/imgs/phil-wilkins.jpeg',
   },
   {
     id: 'speaker2',
@@ -52,7 +52,7 @@ const speakers = [
           of work Jody enjoys spending time with his family,
           traveling, mountain bike racing, sailing and
           listening to live music.`,
-    photo: './assets/imgs/jody-bailey.png'
+    photo: './assets/imgs/jody-bailey.png',
   },
   {
     id: 'speaker3',
@@ -72,71 +72,139 @@ const speakers = [
           As a home chef, his dishes frequently receive
           spousal acclaim for being “too spicy” or “good
           enough”.`,
-    photo: './assets/imgs/spencer-carver.jpg'
-  }//,
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // },
-  // {
-  //   id: '',
-  //   name: '',
-  //   position: '',
-  //   bio: ``,
-  //   photo: ''
-  // }
+    photo: './assets/imgs/spencer-carver.jpg',
+  },
+  {
+    id: 'speaker4',
+    name: 'Mihailo Joksimovic',
+    position: 'Senior Software Engineer @ Microsoft',
+    bio: `Software Architect by choice, Engineering Manager
+          by accident and REBT practitioner by need. Thirteen
+          plus years in the industry have taught him stuff and
+          he's willing to share them!`,
+    photo: './assets/imgs/.jpg',
+  },
+  {
+    id: 'speaker5',
+    name: 'Steve Wood',
+    position: 'SVP of Product and Developer Platform @ Slack',
+    bio: `Steve Wood is the SVP Product, Platform at Slack, where
+          he oversees Slack’s vision to be an automation platform
+          for work. Steve drives the continued success of the Slack
+          platform and popular no-code tool Workflow Builder, which
+          gives users the tools to integrate their unique mix of
+          software and create time-saving automations in the same
+          place their team already works together. He’s also focused
+          on enhancing the Slack platform’s developer capabilities,
+          enabling 1M+ developers to build custom apps that help their
+          teams do their best work.`,
+    photo: './assets/imgs/steve-wood.jpg',
+  },
+  {
+    id: 'speaker6',
+    name: 'Siddhant Sanyam',
+    position: 'Staff Software Engineer @ Google',
+    bio: `Siddhant is a Staff Software Engineer and a TLM in Google's
+          Core Org. Prior to this, he has been with Meta Inc. (formally
+          called Facebook) for about 8 years and has led many initiatives
+          in various orgs like the Notification Platform, building scalable
+          A/B testing infrastructure and more recently, developing a new
+          paradigm and eco-system for authoring and deploying complex data
+          pipelines using a tool called Dent. In his free time, he likes
+          practicing and composing music, mixing cocktails and watching
+          cooking videos.`,
+    photo: './assets/imgs/siddhant-sanyam.jpg',
+  },
+  {
+    id: 'speaker7',
+    name: 'Josefine Schaefer',
+    position: 'Developer Relations Engineer @ Storyblok',
+    bio: `Initially from a communications background, Josefine got into
+          frontend development in her late twenties by joining a coding
+          boot camp. After working as a front-end developer for two years,
+          she now combines her curiosity for tech with her experience in
+          marketing and communications and works as a Developer Relations
+          Engineer at Storyblok. She is a Girl Code ambassador, passionate
+          about all things web accessibility and coding communities.`,
+    photo: './assets/imgs/josefine-schaefer.jpg',
+  },
+  {
+    id: 'speaker8',
+    name: 'Josh Goldberg',
+    position: 'Developer @ Open Source Development',
+    bio: `Josh is a frontend developer from New York with a
+          passion for open source, static analysis, and the web. He's a
+          full time open source maintainer and work on projects in the
+          TypeScript ecosystem such as typescript-eslint and TypeStat.
+          I'm also the author of the Learning TypeScript book, published
+          by O'Reilly. His work focuses on bringing accessible education
+          to the masses in a sustainable way.`,
+    photo: './assets/imgs/josh-goldberg.jpg',
+  },
+  {
+    id: 'speaker9',
+    name: 'Lesley Cordero',
+    position: 'Staff Software Engineer @ The New York Times',
+    bio: `Lesley is currently a Staff Software Engineer at
+          The New York Times. She has spent the majority of her career
+          on edtech teams as an engineer, including Google for Education
+          and other edtech startups. In my previous roles I have focused
+          on building robust data pipelines, setting technical strategy,
+          building excellent engineering teams & communities, and
+          reliability management. Some more specifics include setting
+          org-wide vision & strategy for observability, improving on-call
+          processes, adopting chaos engineering practices, and cultivating
+          culture that builds with the most vulnerable employees
+          in mind first.`,
+    photo: './assets/imgs/lesley-cordero.jpg',
+  },
+  {
+    id: 'speaker10',
+    name: 'Anastasia Lalamentik',
+    position: 'Full Stack Engineer @ Kaleido',
+    bio: `Anastasia is a full-stack engineer at Kaleido,
+          she obtained her undergraduate degree at UNC Chapel-Hill and
+          her graduate degree at the University of Virginia, where she
+          did Human-Computer Interaction research in haptics and
+          accessibility.`,
+    photo: './assets/imgs/anastasia-lalamentik.jpg',
+  },
+  {
+    id: 'speaker11',
+    name: 'Brendan O\'Leary',
+    position: 'Staff Developer Evangelist @ GitLab',
+    bio: `Brendan has a passion for software development and iterating
+          on processes just as quickly as we iterate on code. He is a
+          zealous advocate for the user experience. Brendan can still
+          remember what his first computer - a Tandy 2000 - felt like
+          to use (and break...sorry Dad). Working with customers to
+          deliver value is what drives Brendan's passion for DevOps
+          and smooth CI/CD implementation. Brendan has worked with a
+          wide range of customers - from the nation's top healthcare
+          institutions to environmental services companies to the
+          Department of Defense. The only thing more eclectic is
+          probably his taste in music. Outside of work, you'll find
+          Brendan with 1 to 4 kids hanging off of him at any given time
+          or occasionally finding a moment alone to build something in
+          his workshop.`,
+    photo: './assets/imgs/brendan-oleary.jpg',
+  },
+  {
+    id: 'speaker12',
+    name: 'Ankush Desai',
+    position: 'Senior Applied Scientist @ Amazon Web Services',
+    bio: `Ankush is a Senior Applied Scientist in the Database
+          Services (DBS) group at AWS. He is currently working on
+          building formal tools and techniques that help developers
+          reason about the correctness of complex distributed services
+          across AWS (S3, DBS, EBS,). These techniques range from
+          lightweight approaches like model checking, to systematic
+          testing, to more rigorous deductive verification that provides
+          mathematical proofs. . Before joining the DBS group, Ankush
+          was part of the S3 team and worked on the Amazon S3's Strong
+          Consistency project.`,
+    photo: './assets/imgs/ankush-desai.jpg',
+  },
 ];
 
 // Events in the Mobile Menu
