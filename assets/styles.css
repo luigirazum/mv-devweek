@@ -294,6 +294,52 @@ a:hover {
   font-weight: var(--bold-weight);
 }
 
+/* HEADLINE AT ABOUT PAGE STYLES */
+#about .banner {
+  background: none;
+  /* background-image:
+    linear-gradient(
+      rgba(253, 253, 253, 0.88),
+      rgba(253, 253, 253, 0.88)
+    ),
+    url(./bgimgs/banner.jpg); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-position: center; */
+  text-align: center;
+  padding: 7em 0 7em;
+}
+
+#about .slogan {
+  text-align: center;
+}
+
+#about .banner h1 {
+  background: none;
+  -webkit-text-fill-color:initial;
+  text-align: center;
+}
+
+#about .event-text {
+  background-color: var(--almost-white-color);
+  border: 3px solid var(--light-gray-color);
+  /* padding: 0.8em; */
+  /* font-size: 0.8rem; */
+  line-height: 1.6rem;
+  margin: 3em 0 2em 0;
+}
+
+#about .desktop {
+  display: none;
+}
+
+#about .event-place {
+  font-weight: var(--regular-weight);
+  font-size: 0.75rem;
+  line-height: 1.3rem;
+  padding: 6em;
+}
+
 /* MAIN PROGRAM STYLES */
 #program {
   background-color: var(--secondary-color);
@@ -725,6 +771,14 @@ a:hover {
     font-size: 0.75rem;
   }
 
+  #about .mobile {
+    display: none;
+  }
+
+  #about .desktop {
+    display: flex;
+  }
+
   /* PROGRAM STYLES FOR DESKTOP */
   #program ul {
     flex-direction: row;
@@ -841,10 +895,6 @@ a:hover {
   }
 
   /* PARTNERS STYLES FOR DESKTOP */
-  #about #partners {
-    display: none;
-  }
-
   .partners-logos {
     margin: 1em 0.5em;
   }
@@ -856,6 +906,11 @@ a:hover {
   .partners-logos .partner-logo {
     width: 20%;
     padding: 0.05em;
+  }
+
+  /* PARTNERS AT ABOUT PAGE STYLES */
+  #about #partners {
+    display: none;
   }
 
   /* FOOTER STYLES FOR DESKTOP */
@@ -874,6 +929,7 @@ a:hover {
     line-height: 0.7rem;
   }
 
+  /* FOOTER AT ABOUT PAGE STYLES */
   #about #footer {
     background-color: var(--secondary-color);
     color: var(--almost-white-color);
