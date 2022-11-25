@@ -186,6 +186,7 @@ a:hover {
   right: 0.6em;
   top: -0.2em;
 }
+
 .contain-nav .x-close a:hover {
   background-color: transparent;
   padding-left: 0.6em;
@@ -544,7 +545,8 @@ a:hover {
 
   .burguer-nav,
   .contain-nav .x-close a,
-  .go-home {
+  #home .go-home,
+  #about .go-about {
     display: none;
   }
 
@@ -839,6 +841,10 @@ a:hover {
   }
 
   /* PARTNERS STYLES FOR DESKTOP */
+  #about #partners {
+    display: none;
+  }
+
   .partners-logos {
     margin: 1em 0.5em;
   }
@@ -866,5 +872,10 @@ a:hover {
     width: 30%;
     font-size: 0.6rem;
     line-height: 0.7rem;
+  }
+
+  #about #footer {
+    background-color: var(--secondary-color);
+    color: var(--almost-white-color);
   }
 }
