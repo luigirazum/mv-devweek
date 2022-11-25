@@ -1,6 +1,7 @@
 // This file contains the JS scripts/functions used in the DevWeek project.
 
 // Object 'speakers' to store Speakers info
+// It is used to generate dinamically the cards for all the speakers.
 const speakers = [
   {
     id: 'speaker1',
@@ -8,7 +9,7 @@ const speakers = [
     position: 'Cloud Developer Evangelist @ Oracle',
     bio: `Phil Wilkins has spent over 25 years in the
           software industry with a breadth of experience
-          in different types of businesses and environments
+          in different types of businesses and environments.
           from multinationals to software startups and
           consumer organizations including a global optical
           and auditory healthcare provider. He started out
@@ -82,7 +83,7 @@ const speakers = [
           by accident and REBT practitioner by need. Thirteen
           plus years in the industry have taught him stuff and
           he's willing to share them!`,
-    photo: './assets/imgs/.jpg',
+    photo: './assets/imgs/mihailo-joksimovic.jpg',
   },
   {
     id: 'speaker5',
@@ -207,16 +208,82 @@ const speakers = [
   },
 ];
 
+// Add the cards of each speaker at the speakers variable.
+// This cards are added into the HTML dinamically when the page loads.
+
+// getSpeaker function, retrieves the JS object for the
+// speaker id that we asked for.
+const getSpeaker = (id) => speakers.find((speaker) => speaker.id === id);
+
+// insertSpeaker function fullfils a Template with the
+// speaker info and then it adds it to the HTML into the
+// speakers section.
+const insertSpeaker = (speaker) => {
+  // Fill the spkrTemplate with the info of the speaker
+  const spkrTemplate = `
+    <div class="speaker-photo">
+      <div class="squares"></div>
+      <img src="${speaker.photo}" alt="${speaker.name} photo">
+    </div>
+    <div class="speaker-info">
+      <strong>${speaker.name}</strong>
+      <span>
+        <i>< ${speaker.position} /></i>
+      </span>
+      <hr class="speaker-dash">
+      <p>
+        ${speaker.bio.split('.').shift()}.
+      </p>
+    </div> <!--EOF ${speaker.name}-->
+  `;
+
+  const spkrsList = document.querySelector('#speakers-list');
+  const newSpeaker = document.createDocumentFragment();
+
+  const li = document.createElement('li');
+  li.classList = `speaker ${speaker.id} show`;
+  li.innerHTML = spkrTemplate;
+  newSpeaker.appendChild(li);
+
+  spkrsList.appendChild(newSpeaker);
+};
+
+// createSpeakers is the function that starts
+// the process of loading the speakers cards
+// when the page loads (dinamically).
+const createSpeakers = (speakers) => {
+  speakers.forEach((speaker) => {
+    insertSpeaker(getSpeaker(speaker.id));
+  });
+};
+
+// When the page is loaded we add the speakers cards
+// to the Speakers section dinamically.
+window.addEventListener('load', () => {
+  // Verify that we are in the index.html to load the cards.
+  if (window.location.pathname === '/index.html') {
+    createSpeakers(speakers);
+  }
+});
+
+window.addEventListener('resize', (event) => {
+  console.log(event);
+  if (window.innerWidth < 768) {
+    speakers.forEach((speaker, i) => {
+      console.log(i);
+    });
+  }
+});
 // Events in the Mobile Menu
-// CSS styles are used to make the Burguer icon
+// CSS styles are used to make the Burger icon
 // appear or disappear as you change from desktop
 // version to mobile and viceversa.
 
 // When we have the Burguer button we can click it
 document.querySelector('.burguer-nav a').addEventListener('click', () => {
-  // Clicking the burguer icon makes the mobile menu appear.
+  // Clicking the burger icon makes the mobile menu appear.
   document.querySelector('.contain-nav').style.display = 'flex';
-  // When the mobile menu is visible the burguer button disappear.
+  // When the mobile menu is visible the burger button disappear.
   document.querySelector('.burguer-nav').style.display = 'none';
 });
 
@@ -226,7 +293,7 @@ document.querySelector('.burguer-nav a').addEventListener('click', () => {
 document.querySelector('.x-close').addEventListener('click', () => {
   // Clicking the X will close the mobile menu
   document.querySelector('.contain-nav').style.display = '';
-  // Once the mobile menu is closed, the burguer button will appear
+  // Once the mobile menu is closed, the burger button will appear
   // on the top/left corner of the screen.
   document.querySelector('.burguer-nav').style.display = '';
 });
