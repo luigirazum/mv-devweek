@@ -166,7 +166,7 @@ a:hover {
   display: flex;
   list-style: none;
   flex-direction: column;
-  margin-top: 2.4em;
+  margin-top: 2.6em;
 }
 
 .contain-nav li a {
@@ -204,7 +204,32 @@ a:hover {
   padding: 0;
 }
 
-.contain-nav .logo,
+.contain-nav .logo {
+  display: flex;
+  align-items: center;
+  font-weight: var(--black-weight);
+  font-size: 1.3rem;
+  padding: 0.5em;
+  width: 35%;
+  color: var(--almost-white-color);
+}
+
+.contain-nav .logo:hover {
+  scale: none;
+  padding-left: 1.5em;
+  width: 39.5%;
+  color: var(--primary-color);
+}
+
+.contain-nav .logo strong {
+  color: var(--secondary-color);
+}
+
+.contain-nav .logo .img-logo {
+  width: 25%;
+  margin-right: 0.2em;
+}
+
 .contain-nav .campaign {
   display: none;
 }
@@ -518,7 +543,8 @@ a:hover {
   }
 
   .burguer-nav,
-  .contain-nav .x-close a {
+  .contain-nav .x-close a,
+  .go-home {
     display: none;
   }
 
@@ -623,25 +649,26 @@ a:hover {
     letter-spacing: normal;
     padding: 0;
     filter: saturate(4);
-    /* scale: 1.05; */
   }
 
   .contain-nav .logo {
-    display: flex;
-    align-items: center;
     font-weight: var(--black-weight);
     font-size: 0.9rem;
+    color: var(--secondary-color);
     padding: 0.3em;
-    width: 24%;
+    width: 20%;
     transition: scale 300ms ease-out;
   }
 
   .contain-nav .logo:hover {
     filter: saturate(4);
+    width: 20%;
+    padding-left: 0.3em;
     scale: 1.2;
+    color: var(--secondary-color);
   }
 
-  .contain-nav .logo img {
+  .contain-nav .logo .img-logo {
     margin-right: 0.2em;
   }
 
