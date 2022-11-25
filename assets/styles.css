@@ -7,7 +7,9 @@
 :root {
   /* Define the primary font */
   --primary-font: 'Lato', sans-serif;
+
   font-size: calc(16px + (42 - 16) * ((100vw - 375px) / (1800 - 375)));
+
   /* font-size: 62.5%; */
 
   /* Define different font weights */
@@ -24,7 +26,7 @@
   --light-gray-color: #c1c2c4;
   --very-light-gray-color: #efefef;
   --light-white-color: #f5f5f5;
-  --almost-white-color: #fcfcfc
+  --almost-white-color: #fcfcfc;
 }
 
 /* RESET DEFAULT BROWSER STYLES */
@@ -116,10 +118,100 @@ a:hover {
 .btn-more:hover {
   background-color: var(--secondary-color);
   color: #fff;
-  filter:saturate(4);
+  filter: saturate(4);
 }
 
 /* NAVBAR STYLES */
+.show {
+  display: flex;
+}
+
+.burguer-nav {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.burguer-nav a {
+  width: 1.5rem;
+  padding: 0.1em;
+  margin: 1em;
+  filter: saturate(2.5);
+  cursor: pointer;
+}
+
+.burguer-nav a:hover {
+  filter:grayscale(1);
+  scale: none;
+}
+
+.mini-nav ul,
+.main-nav ul {
+  display: none;
+}
+
+.contain-nav {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(214, 74, 52, 0.8);
+  backdrop-filter: blur(3px);
+  transition: all 250ms ease-out;
+}
+.contain-nav .main-nav {
+  width: 100%;
+}
+
+.contain-nav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  margin-top: 2.4em;
+}
+
+.contain-nav li a {
+  display: block;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding: 0.5em 0 0.2em 0.6em;
+  color: var(--almost-white-color);
+  letter-spacing: 0.03em;
+}
+
+.contain-nav .x-close a {
+  border-bottom: none;
+  cursor: pointer;
+  position: absolute;
+  width: 2.2rem;
+  right: 0.6em;
+  top: -0.2em;
+}
+.contain-nav .x-close a:hover {
+  background-color: transparent;
+  padding-left: 0.6em;
+  scale: none;
+  filter: opacity(.9) invert(.8);
+}
+
+.contain-nav li a:hover {
+  background-color: rgba(48, 49, 54, 0.7);
+  padding-left: 1.5em;
+  letter-spacing: 0.06em;
+}
+
+.contain-nav .x-close {
+  width: 2rem;
+  padding: 0;
+}
+
+.contain-nav .logo,
+.contain-nav .campaign {
+  display: none;
+}
 
 /* HEADLINE STYLES */
 .banner {
@@ -127,8 +219,9 @@ a:hover {
   background-image:
     linear-gradient(
       rgba(253, 253, 253, 0.88),
-      rgba(253, 253, 253, 0.88)) ,
-      url(./bgimgs/banner.jpg);
+      rgba(253, 253, 253, 0.88)
+    ),
+    url(./bgimgs/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -339,7 +432,7 @@ a:hover {
   margin-left: 0.5em;
 }
 
-/* PARTNERS STYLES*/
+/* PARTNERS STYLES */
 #partners {
   padding: 2rem 0;
   background-color: var(--secondary-color);
@@ -416,11 +509,15 @@ a:hover {
   }
 
   /* HEADER SECTION */
-  /* #header {
+
+  #header {
     background-color: var(--secondary-color);
     box-shadow: 0 0 4px var(--light-gray-color);
-    position: sticky;
-    z-index: 1;
+  }
+
+  .burguer-nav,
+  .contain-nav .x-close a {
+    display: none;
   }
 
   nav {
@@ -429,42 +526,124 @@ a:hover {
     margin: 0 auto;
   }
 
-  .mini-nav {
-    max-width: min(90%, 30rem);
-  }
-
+  .mini-nav,
   .main-nav {
-    background-color: var(--almost-white-color);
     max-width: min(90%, 30rem);
   }
 
-  .mininav ul,
+  .mini-nav ul,
   .main-nav ul {
+    display: flex;
   }
 
-  nav ul li {
-    display: inline-block;
+  .mini-nav ul {
+    padding: 0.01em 0;
+    justify-content: flex-end;
+    align-items: center;
   }
 
-  nav .logo {
+  .mini-nav ul li {
+    height: 1rem;
+    width: 2rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .mini-nav .sm-icon {
+    width: 0.8rem;
+    padding: 0.1em;
+  }
+
+  .mini-nav a {
+    color: #fff;
+    padding: 0.1em;
+    align-content: center;
+  }
+
+  .mini-nav a:hover {
+    color: var(--primary-color);
+    filter: saturate(3);
+    scale: none;
+  }
+
+  .mini-nav img {
+    display:inline-block
+  }
+
+  .mini-nav img:hover {
+    filter: invert(1);
+    scale: none;
+  }
+
+  .main-nav ul {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contain-nav {
+    display: flex;
+    position: initial;
+    width: 100%;
+    height: auto;
+    z-index: auto;
+    background-color: var(--almost-white-color);
+    backdrop-filter: none;
+  }
+
+  .contain-nav .x-close a {
+    display: none;
+  }
+
+  .contain-nav ul {
+    flex-direction: row;
+    margin-top: 0;
+  };
+
+  .contain-nav li {
+    height: auto;
+  }
+
+  .contain-nav li a {
+    border-bottom: none;
+    color: initial;
+    letter-spacing: normal;
+    color: var(--secondary-color);
+    font-weight: var(--bold-weight);
+    font-size: 0.5rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  .contain-nav li a:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+    letter-spacing: normal;
+    padding: 0;
+    filter: saturate(4);
+    /* scale: 1.05; */
+  }
+
+  .contain-nav .logo {
     display: flex;
     align-items: center;
     font-weight: var(--black-weight);
     font-size: 0.9rem;
+    padding: 0.3em;
     width: 24%;
     transition: scale 300ms ease-out;
   }
 
-  nav .logo:hover {
+  .contain-nav .logo:hover {
     filter: saturate(4);
     scale: 1.2;
   }
 
-  nav .logo img {
-    margin-right: 0.4em;
+  .contain-nav .logo img {
+    margin-right: 0.2em;
   }
 
-  nav span {
+  .contain-nav span {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -476,14 +655,13 @@ a:hover {
     margin-right: 0.25rem;
   }
 
-  .logo strong {
+  .contain-nav .logo strong {
     font-weight: var(--bold-weight);
     color: var(--primary-color);
   }
 
-
-  nav .campaign {
-    width: 4rem;
+  .contain-nav .campaign {
+    display: inline-block;
     color: var(--primary-color);
     border: 3px solid var(--primary-color);
     text-align: center;
@@ -491,10 +669,10 @@ a:hover {
     transition: all 300ms ease-in-out;
   }
 
-  nav .campaign:hover {
+  .contain-nav .campaign:hover {
     scale: 1.1;
     filter: saturate(4);
-  } */
+  }
 
   /* HEADLINE STYLES FOR DESKTOP */
   .banner {
@@ -525,7 +703,7 @@ a:hover {
     margin: 1.5rem auto;
   }
 
-  #program ul li{
+  #program ul li {
     width: 19.5%;
     min-height: 7rem;
     flex-direction: column;
@@ -633,7 +811,7 @@ a:hover {
 
   /* PARTNERS STYLES FOR DESKTOP */
   .partners-logos {
-    margin: 1em 0.5em
+    margin: 1em 0.5em;
   }
 
   .partners-logos ul {
@@ -654,6 +832,7 @@ a:hover {
     width: 10%;
     padding: 0.2em;
   }
+
   #footer p {
     width: 30%;
     font-size: 0.6rem;
