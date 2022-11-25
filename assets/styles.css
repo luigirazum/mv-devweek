@@ -122,10 +122,6 @@ a:hover {
 }
 
 /* NAVBAR STYLES */
-.show {
-  display: flex;
-}
-
 .burguer-nav {
   position: fixed;
   top: 0;
@@ -354,9 +350,16 @@ a:hover {
   gap: 1em;
 }
 
-#speakers .speaker {
+#speakers .show {
   display: flex;
-  height: 19rem;
+}
+
+.speaker {
+  display: none;
+}
+
+#speakers .speaker {
+  height: 15rem;
   justify-content: space-between;
 }
 
@@ -766,7 +769,7 @@ a:hover {
 
   #speakers .speaker {
     width: 47.5%;
-    height: 11rem;
+    height: 8.5rem;
   }
 
   #speakers .speaker .speaker-photo {
