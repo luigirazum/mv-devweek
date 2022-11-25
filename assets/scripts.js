@@ -1,7 +1,6 @@
 // This file contains the JS scripts/functions used in the DevWeek project.
 
-// Object to store Speakers info
-
+// Object 'speakers' to store Speakers info
 const speakers = [
   {
     id: 'speaker1',
@@ -139,3 +138,35 @@ const speakers = [
   //   photo: ''
   // }
 ];
+
+// Events in the Mobile Menu
+// CSS styles are used to make the Burguer icon
+// appear or disappear as you change from desktop
+// version to mobile and viceversa.
+
+// When we have the Burguer button we can click it
+document.querySelector('.burguer-nav a').addEventListener('click', () => {
+  // Clicking the burguer icon makes the mobile menu appear.
+  document.querySelector('.contain-nav').style.display = 'flex';
+  // When the mobile menu is visible the burguer button disappear.
+  document.querySelector('.burguer-nav').style.display = 'none';
+});
+
+// When you can see the mobile menu, and X at the right/top
+// corner of the screen is available to close the mobile menu
+// you can click on it.
+document.querySelector('.x-close').addEventListener('click', () => {
+  // Clicking the X will close the mobile menu
+  document.querySelector('.contain-nav').style.display = '';
+  // Once the mobile menu is closed, the burguer button will appear
+  // on the top/left corner of the screen.
+  document.querySelector('.burguer-nav').style.display = '';
+});
+
+// When we have the mobile menu open, we can choose any option
+// available to scroll into the page.
+document.querySelector('.main-nav ul').addEventListener('click', () => {
+  // Clicking on any option, will take you to that
+  // part of the page and will close the mobile menu.
+  document.querySelector('.x-close').click();
+});
