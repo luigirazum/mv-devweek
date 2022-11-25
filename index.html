@@ -9,17 +9,26 @@
   <title>DevWeek - Conferences & Events</title>
 </head>
 <body>
-  <!-- HEADER: Navegation
+  <!-- HEADER: Navegation -->
   <header id="header">
     <!--Social Media NAV-->
-    <!-- <nav class="mini-nav">
+    <nav class="burguer-nav">
       <ul>
         <li>
+          <a>
+            <img src="./assets/icons/mobile-menu-icon.svg" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="mini-nav">
+      <ul>
+        <li class="sm-icon">
           <a href="#">
             <img src="./assets/icons/fb-icon.svg" alt="Facebook icon">
           </a>
         </li>
-        <li>
+        <li class="sm-icon">
           <a href="#">
             <img src="./assets/icons/tw-icon.svg" alt="Twitter icon">
           </a>
@@ -34,36 +43,42 @@
           <a href="#">Login</a>
         </li>
       </ul>
-    </nav> -->
+    </nav>
     <!--EOF Social Media NAV-->
 
-    <!--Main Navigation NAV-->
-    <!-- <nav class="main-nav">
-      <ul>
-        <a class="logo" href="#headline">
-          <img class="logo" src="./assets/logos/dev-week-logo.svg" alt="DevWeek Logo">
-          Dev<strong>Week</strong>
-        </a>
-        <li>
-          <a href="about.html">About</a>
-        </li>
-        <li>
-          <a href="#program">Program</a>
-        </li>
-        <li>
-          <a href="#program">Join</a>
-        </li>
-        <li>
-          <a href="#partners">Sponsor</a>
-        </li>
-        <li>
-          <a href="#headline">News</a>
-        </li>
-        <a class="campaign" href="#headline">DW Campaign</a>
-      </ul>
-    </nav> -->
-    <!--EOF Main Navigation NAV-->
-  <!-- </header> -->
+    <div class="contain-nav">
+
+      <nav class="main-nav"> <!--Main Navigation NAV-->
+        <ul>
+          <a class="logo" href="index.html">
+            <img class="logo" src="./assets/logos/dev-week-logo.svg" alt="DevWeek Logo">
+            Dev<strong>Week</strong>
+          </a>
+          <li class="x-close">
+            <a><img src="./assets/icons/x-close-icon.svg" alt=""></a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <a href="#program">Program</a>
+          </li>
+          <li>
+            <a href="#program">Join</a>
+          </li>
+          <li>
+            <a href="#partners">Sponsor</a>
+          </li>
+          <li>
+            <a href="#headline">News</a>
+          </li>
+          <a class="campaign" href="#headline">DW Campaign</a>
+        </ul>
+      </nav>
+      <!--EOF Main Navigation NAV-->
+    </div>
+    <!--EOF .contain-nav-->
+  </header>
 
   <!--MAIN CONTENT-->
   <main id="headline">
