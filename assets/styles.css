@@ -233,7 +233,7 @@ a:hover {
   padding: 0;
 }
 
-.contain-nav .logo {
+.logo {
   display: flex;
   align-items: center;
   font-weight: var(--black-weight);
@@ -243,7 +243,7 @@ a:hover {
   color: var(--almost-white-color);
 }
 
-.contain-nav .logo:hover {
+.logo:hover {
   scale: none;
   padding-left: 1.5em;
   width: 39.5%;
@@ -256,11 +256,11 @@ a:hover {
   letter-spacing: 0.01em;
 }
 
-.contain-nav .logo strong {
+.logo strong {
   color: var(--secondary-color);
 }
 
-.contain-nav .logo .img-logo {
+.logo .img-logo {
   width: 25%;
   margin-right: 0.2em;
 }
@@ -456,9 +456,21 @@ a:hover {
   color: var(--primary-color);
 }
 
+#footer span {
+  font-size: 1.2rem;
+  display: flex;
+  width: 45%;
+  align-items: center;
+}
+
 #program ul li span {
   display: inline-block;
   width: 8.5%;
+}
+
+#footer strong {
+  color: var(--primary-color);
+  filter: saturate(2);
 }
 
 #program ul li strong {
@@ -616,8 +628,8 @@ a:hover {
 }
 
 #footer img {
-  width: 15%;
-  padding: 0.5em;
+  width: 25%;
+  padding: 0.4em;
 }
 
 #partners img:hover {
@@ -634,7 +646,7 @@ a:hover {
   display: flex;
   width: 100%;
   gap: 1em;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -1207,7 +1219,7 @@ a:hover {
   }
 
   #footer img {
-    width: 10%;
+    width: 20%;
     padding: 0.2em;
   }
 
