@@ -261,7 +261,7 @@ const createSpeakers = (speakers) => {
 // to the Speakers section dinamically.
 window.addEventListener('load', () => {
   // Verify that we are in the index.html to load the cards.
-  if (window.location.pathname === '/index.html') {
+  if (window.location.pathname.includes('/index.html')) {
     createSpeakers(speakers);
 
     // If we are in the home page (index.html)
