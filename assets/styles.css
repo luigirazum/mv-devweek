@@ -19,7 +19,7 @@
   --black-weight: 900;
 
   /* Define the color pallete */
-  --primary-color: #d64a34;
+  --primary-color: rgb(214, 74, 52);
   --light-primary-color: #d88567;
   --secondary-color: #303136;
   --gray-color: #949597;
@@ -115,7 +115,12 @@ a:hover {
   content: "More";
 }
 
-.btn-more:hover {
+.btn-less::before {
+  content: "Less";
+}
+
+.btn-more:hover,
+.btn-less:hover {
   background-color: var(--secondary-color);
   color: #fff;
   filter: saturate(4);
@@ -231,7 +236,14 @@ a:hover {
   margin-right: 0.2em;
 }
 
-.contain-nav .campaign {
+.contain-nav .campaign,
+#about .go-program,
+#about .go-join,
+#about .go-news,
+#home .go-info,
+#home .go-contact,
+#home .go-logo,
+#home .go-editions {
   display: none;
 }
 
@@ -296,18 +308,17 @@ a:hover {
 
 /* HEADLINE AT ABOUT PAGE STYLES */
 #about .banner {
-  background: none;
-  /* background-image:
+  background-image:
     linear-gradient(
       rgba(253, 253, 253, 0.88),
       rgba(253, 253, 253, 0.88)
     ),
-    url(./bgimgs/banner.jpg); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* background-position: center; */
+    url(./imgs/bd-dw-conf-2019.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40%;
   text-align: center;
-  padding: 7em 0 7em;
+  padding: 8em 0 3em;
 }
 
 #about .slogan {
@@ -323,8 +334,6 @@ a:hover {
 #about .event-text {
   background-color: var(--almost-white-color);
   border: 3px solid var(--light-gray-color);
-  /* padding: 0.8em; */
-  /* font-size: 0.8rem; */
   line-height: 1.6rem;
   margin: 3em 0 2em 0;
 }
@@ -333,11 +342,23 @@ a:hover {
   display: none;
 }
 
-#about .event-place {
+#about .event-place,
+#about .about-text {
   font-weight: var(--regular-weight);
   font-size: 0.75rem;
   line-height: 1.3rem;
-  padding: 6em;
+  padding: 0 6em;
+}
+
+#about .email-link {
+  font-size: 0.8rem;
+  font-weight: var(--black-weight);
+  text-decoration: underline;
+}
+
+#about .email-link:hover {
+  color: var(--primary-color);
+  filter: saturate(2);
 }
 
 /* MAIN PROGRAM STYLES */
@@ -349,7 +370,8 @@ a:hover {
 
 #program h2,
 #speakers h2,
-#partners h2 {
+#partners h2,
+#about .section-title {
   color: #fff;
   font-weight: var(--bold-weight);
   text-align: center;
@@ -358,7 +380,8 @@ a:hover {
 
 #program hr,
 #speakers hr,
-#partners hr {
+#partners hr,
+#about hr {
   width: 10%;
   margin: 0 auto;
   border: 1px solid var(--primary-color);
@@ -422,12 +445,19 @@ a:hover {
   gap: 1em;
 }
 
-#speakers .show {
+#speakers ul li.speaker,
+.btn-less,
+.hide {
+  display: none;
+}
+
+#speakers ul li.speaker:nth-child(-n+2){
   display: flex;
 }
 
-.speaker {
-  display: none;
+#speakers ul li.speaker.show,
+.btn-less.show {
+  display: flex;
 }
 
 #speakers .speaker {
@@ -485,7 +515,8 @@ a:hover {
   border: 1px solid var(--light-gray-color);
 }
 
-.btn-more {
+.btn-more,
+.btn-less {
   text-transform: uppercase;
   width: 100%;
   margin: 0;
@@ -496,15 +527,25 @@ a:hover {
   padding: 1em;
 }
 
-.btn-more .arrow-icon::after {
+.btn-more .arrow-icon::after,
+.btn-less .arrow-icon::after {
   display: inline-block;
   content: "";
-  background: url('./icons/arrow-down.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 1em;
   height: 1em;
   margin-left: 0.5em;
+}
+
+.btn-more .arrow-icon::after {
+  background: url('./icons/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-less .arrow-icon::after {
+  background: url('./icons/arrow-up.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* PARTNERS STYLES */
@@ -573,6 +614,156 @@ a:hover {
   font-weight: var(--bold-weight);
 }
 
+/* LOGO ABOUT IN ABOUT PAGE STYLES */
+#about #logo-about,
+#about #dw-editions {
+  background-color: var(--almost-white-color);
+  padding: 2rem 0 3rem;
+  border-bottom: 2px solid var(--very-light-gray-color);
+}
+
+#about .section-title {
+  color: var(--secondary-color);
+}
+
+#about hr {
+  width: 6%;
+  margin-bottom: 1em;
+}
+
+#about .about-text {
+  text-align: center;
+  padding: 0 5em;
+}
+
+#about small {
+  font-weight: var(--bold-weight);
+}
+
+#about .show-logo {
+  display: flex;
+  border: 2px solid var(--very-light-gray-color);
+  height: 9rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2.5em 1.7em;
+  margin: 2em 0 1em 0;
+  transition: all 250ms ease-in;
+}
+
+#about .show-logo:hover {
+  border: 2px solid var(--primary-color);
+  filter: saturate(2);
+}
+
+.show-logo img {
+  max-width: 70%;
+  transition: all 250ms ease-out;
+}
+
+.show-logo img:hover {
+  filter: saturate(2);
+  scale: 1.05;
+}
+
+#about .previous-events {
+  width: 95%;
+  margin: 2.5em auto 1em auto;
+  display: flex;
+  gap: 1.5em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about article {
+  width: 90%;
+  height: 45vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#about article .img-previous {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  filter:
+    sepia(100%)
+    saturate(350%)
+    brightness(45%)
+    hue-rotate(320deg)
+    opacity(0.75)
+    drop-shadow(0 0 0 rgb(255, 38, 0));
+}
+
+#about article h3,
+#about article h4,
+#about article p {
+  position: absolute;
+}
+
+#about article h3 {
+  width: 90%;
+  font-weight: var(--black-weight);
+  font-size: 1.9em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -105%);
+}
+
+#about article h4 {
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 60%);
+}
+
+#about .previous-events .about-text {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  padding: 0 1.2em;
+}
+
+#about .previous-events .hidden-text {
+  font-weight: var(--bold-weight);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.02em;
+  color: transparent;
+  transition: all 350ms ease;
+}
+
+#about article:hover .hidden-text {
+  color: var(--secondary-color);
+  filter:contrast(250%);
+}
+
+#about .previous-events .hide-text {
+  color: var(--almost-white-color);
+  transition: all 250ms ease;
+}
+
+#about article:hover .hide-text {
+  color: transparent;
+}
+
+#about article:hover .img-previous {
+  filter:
+    sepia(100%)
+    saturate(350%)
+    brightness(45%)
+    hue-rotate(320deg)
+    opacity(0.40)
+    drop-shadow(0 0 0 rgb(210, 210, 210));
+}
+
 /* MEDIA QUERIES START HERE */
 
 /* Styles for 768px and above screen size */
@@ -592,7 +783,15 @@ a:hover {
   .burguer-nav,
   .contain-nav .x-close a,
   #home .go-home,
-  #about .go-about {
+  #home .go-info,
+  #home .go-contact,
+  #home .go-logo,
+  #home .go-editions,
+  #about .go-about,
+  #about .go-program,
+  #about .go-join,
+  #about .go-news,
+  #about .go-partners {
     display: none;
   }
 
@@ -770,6 +969,9 @@ a:hover {
   .banner .event-place {
     font-size: 0.75rem;
   }
+  #about .banner {
+    padding: 4em 0;
+  }
 
   #about .mobile {
     display: none;
@@ -850,6 +1052,10 @@ a:hover {
     gap: 0.5em;
   }
 
+  #speakers ul li.speaker {
+    display: flex;
+  }
+
   #speakers .speaker {
     width: 47.5%;
     height: 8.5rem;
@@ -890,7 +1096,8 @@ a:hover {
     margin: 0.3em 0;
   }
 
-  .btn-more {
+  .btn-more,
+  .btn-less {
     display: none;
   }
 
@@ -911,6 +1118,67 @@ a:hover {
   /* PARTNERS AT ABOUT PAGE STYLES */
   #about #partners {
     display: none;
+  }
+
+  #about {
+    font-size: initial;
+  }
+
+  #about .banner h1 {
+    font-size: 1.7rem;
+    line-height: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+
+  #about .banner .event-text {
+    max-width: 100%;
+    margin: 2em auto 3em auto;
+    font-size: 0.65rem;
+    line-height: 1rem;
+  }
+
+  #about .event-place,
+  #about .about-text {
+    font-size: initial;
+    padding: 0 0.5rem;
+  }
+
+  #about h2 {
+    font-size: 1rem;
+  }
+
+  #about .show-logo {
+    height: 5rem;
+    max-width: 80%;
+    margin: 1.5em auto;
+  }
+
+  #about .previous-events {
+    width: 100%;
+    margin: 1.5em auto 0.5em auto;
+    gap: 1em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #about article {
+    width: 48%;
+    height: 30vh;
+  }
+
+  #about article h3 {
+    font-size: 1.3rem;
+  }
+
+  #about article h4 {
+    font-size: 0.6rem;
+  }
+
+  #about .previous-events .hidden-text {
+    font-size: 0.5rem;
+    line-height: 0.75rem;
   }
 
   /* FOOTER STYLES FOR DESKTOP */
