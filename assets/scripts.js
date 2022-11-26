@@ -241,7 +241,7 @@ const insertSpeaker = (speaker) => {
   const newSpeaker = document.createDocumentFragment();
 
   const li = document.createElement('li');
-  li.classList = `speaker ${speaker.id} show`;
+  li.classList = `speaker ${speaker.id}`;
   li.innerHTML = spkrTemplate;
   newSpeaker.appendChild(li);
 
@@ -266,14 +266,6 @@ window.addEventListener('load', () => {
   }
 });
 
-window.addEventListener('resize', (event) => {
-  console.log(event);
-  if (window.innerWidth < 768) {
-    speakers.forEach((speaker, i) => {
-      console.log(i);
-    });
-  }
-});
 // Events in the Mobile Menu
 // CSS styles are used to make the Burger icon
 // appear or disappear as you change from desktop
@@ -304,4 +296,24 @@ document.querySelector('.main-nav ul').addEventListener('click', () => {
   // Clicking on any option, will take you to that
   // part of the page and will close the mobile menu.
   document.querySelector('.x-close').click();
+});
+
+document.querySelector('.btn-more').addEventListener('click', () => {
+  Array.from(document.getElementsByClassName('speaker')).forEach((speaker, index) => {
+    if (index > 1) {
+      speaker.classList.toggle('show');
+    }
+  });
+  document.querySelector('.btn-less').classList.toggle('show');
+  document.querySelector('.btn-more').classList.toggle('hide');
+});
+
+document.querySelector('.btn-less').addEventListener('click', () => {
+  Array.from(document.getElementsByClassName('speaker')).forEach((speaker, index) => {
+    if (index > 1) {
+      speaker.classList.toggle('show');
+    }
+  });
+  document.querySelector('.btn-more').classList.toggle('hide');
+  document.querySelector('.btn-less').classList.toggle('show');
 });
