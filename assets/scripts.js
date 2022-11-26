@@ -165,7 +165,7 @@ const speakers = [
     position: 'Full Stack Engineer @ Kaleido',
     bio: `Anastasia is a full-stack engineer at Kaleido,
           she obtained her undergraduate degree at UNC Chapel-Hill and
-          her graduate degree at the University of Virginia, where she
+          her graduate degree at the University of Virginia. There she
           did Human-Computer Interaction research in haptics and
           accessibility.`,
     photo: './assets/imgs/anastasia-lalamentik.jpg',
@@ -263,6 +263,37 @@ window.addEventListener('load', () => {
   // Verify that we are in the index.html to load the cards.
   if (window.location.pathname === '/index.html') {
     createSpeakers(speakers);
+
+    // If we are in the home page (index.html)
+    // We have speakers to show, so we add the event listeners
+    // to the more/less buttons for the mobile version in the
+    // Featured Speakers section.
+
+    // This first event listener is for the more button
+    // when you click it, it will hide the more button and
+    // show the less button.
+    document.querySelector('.btn-more').addEventListener('click', () => {
+      Array.from(document.getElementsByClassName('speaker')).forEach((speaker, index) => {
+        if (index > 1) {
+          speaker.classList.toggle('show');
+        }
+      });
+      document.querySelector('.btn-less').classList.toggle('show');
+      document.querySelector('.btn-more').classList.toggle('hide');
+    });
+
+    // This second event listener is for the less button
+    // when you click it, it will hide the less button and
+    // show the more button.
+    document.querySelector('.btn-less').addEventListener('click', () => {
+      Array.from(document.getElementsByClassName('speaker')).forEach((speaker, index) => {
+        if (index > 1) {
+          speaker.classList.toggle('show');
+        }
+      });
+      document.querySelector('.btn-more').classList.toggle('hide');
+      document.querySelector('.btn-less').classList.toggle('show');
+    });
   }
 });
 
@@ -296,24 +327,4 @@ document.querySelector('.main-nav ul').addEventListener('click', () => {
   // Clicking on any option, will take you to that
   // part of the page and will close the mobile menu.
   document.querySelector('.x-close').click();
-});
-
-document.querySelector('.btn-more').addEventListener('click', () => {
-  Array.from(document.getElementsByClassName('speaker')).forEach((speaker, index) => {
-    if (index > 1) {
-      speaker.classList.toggle('show');
-    }
-  });
-  document.querySelector('.btn-less').classList.toggle('show');
-  document.querySelector('.btn-more').classList.toggle('hide');
-});
-
-document.querySelector('.btn-less').addEventListener('click', () => {
-  Array.from(document.getElementsByClassName('speaker')).forEach((speaker, index) => {
-    if (index > 1) {
-      speaker.classList.toggle('show');
-    }
-  });
-  document.querySelector('.btn-more').classList.toggle('hide');
-  document.querySelector('.btn-less').classList.toggle('show');
 });
