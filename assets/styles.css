@@ -88,7 +88,6 @@ a:hover {
   font-weight: var(--bold-weight);
   font-size: 1.2rem;
   padding: 1.8em 3em;
-  display: block;
   margin: 2.5em auto;
   text-align: center;
   display: flex;
@@ -142,7 +141,7 @@ a:hover {
 }
 
 .burguer-nav a:hover {
-  filter:grayscale(1);
+  filter: grayscale(1);
   scale: none;
 }
 
@@ -163,6 +162,7 @@ a:hover {
   backdrop-filter: blur(3px);
   transition: all 250ms ease-out;
 }
+
 .contain-nav .main-nav {
   width: 100%;
 }
@@ -196,7 +196,7 @@ a:hover {
   background-color: transparent;
   padding-left: 0.6em;
   scale: none;
-  filter: opacity(.9) invert(.8);
+  filter: opacity(0.9) invert(0.8);
 }
 
 .contain-nav li a:hover {
@@ -327,7 +327,7 @@ a:hover {
 
 #about .banner h1 {
   background: none;
-  -webkit-text-fill-color:initial;
+  -webkit-text-fill-color: initial;
   text-align: center;
 }
 
@@ -451,7 +451,7 @@ a:hover {
   display: none;
 }
 
-#speakers ul li.speaker:nth-child(-n+2){
+#speakers ul li.speaker:nth-child(-n+2) {
   display: flex;
 }
 
@@ -742,7 +742,7 @@ a:hover {
 
 #about article:hover .hidden-text {
   color: var(--secondary-color);
-  filter:contrast(250%);
+  filter: contrast(250%);
 }
 
 #about .previous-events .hide-text {
@@ -760,7 +760,7 @@ a:hover {
     saturate(350%)
     brightness(45%)
     hue-rotate(320deg)
-    opacity(0.40)
+    opacity(0.4)
     drop-shadow(0 0 0 rgb(210, 210, 210));
 }
 
@@ -791,7 +791,9 @@ a:hover {
   #about .go-program,
   #about .go-join,
   #about .go-news,
-  #about .go-partners {
+  #about .go-partners,
+  #speakers .btn-less,
+  #speakers .btn-more {
     display: none;
   }
 
@@ -843,7 +845,7 @@ a:hover {
   }
 
   .mini-nav img {
-    display:inline-block
+    display: inline-block;
   }
 
   .mini-nav img:hover {
@@ -873,7 +875,7 @@ a:hover {
   .contain-nav ul {
     flex-direction: row;
     margin-top: 0;
-  };
+  }
 
   .contain-nav li {
     height: auto;
@@ -969,6 +971,7 @@ a:hover {
   .banner .event-place {
     font-size: 0.75rem;
   }
+
   #about .banner {
     padding: 4em 0;
   }
@@ -1129,7 +1132,6 @@ a:hover {
     line-height: 2rem;
     margin-bottom: 0.6rem;
   }
-
 
   #about .banner .event-text {
     max-width: 100%;
