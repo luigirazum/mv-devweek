@@ -118,6 +118,22 @@ a:hover {
   content: "Less";
 }
 
+.btn-less {
+  display: none;
+}
+
+.btn-more,
+.btn-less {
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid var(--light-gray-color);
+  color: var(--secondary-color);
+  font-size: 1rem;
+  padding: 1em;
+}
+
 .btn-more:hover,
 .btn-less:hover {
   background-color: var(--secondary-color);
@@ -138,6 +154,22 @@ a:hover {
   margin: 1em;
   filter: saturate(2.5);
   cursor: pointer;
+}
+
+.mini-nav a {
+  color: #fff;
+  padding: 0.1em;
+  align-content: center;
+}
+
+.contain-nav li a {
+  display: block;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding: 0.5em 0 0.2em 0.6em;
+  color: var(--almost-white-color);
+  letter-spacing: 0.03em;
+  font-weight: var(--bold-weight);
 }
 
 .burguer-nav a:hover {
@@ -174,15 +206,6 @@ a:hover {
   margin-top: 2.6em;
 }
 
-.contain-nav li a {
-  display: block;
-  font-size: 1.5rem;
-  border-bottom: 2px solid var(--secondary-color);
-  padding: 0.5em 0 0.2em 0.6em;
-  color: var(--almost-white-color);
-  letter-spacing: 0.03em;
-}
-
 .contain-nav .x-close a {
   border-bottom: none;
   cursor: pointer;
@@ -192,17 +215,17 @@ a:hover {
   top: -0.2em;
 }
 
+.contain-nav li a:hover {
+  background-color: rgba(48, 49, 54, 0.7);
+  padding-left: 1.5em;
+  letter-spacing: 0.06em;
+}
+
 .contain-nav .x-close a:hover {
   background-color: transparent;
   padding-left: 0.6em;
   scale: none;
   filter: opacity(0.9) invert(0.8);
-}
-
-.contain-nav li a:hover {
-  background-color: rgba(48, 49, 54, 0.7);
-  padding-left: 1.5em;
-  letter-spacing: 0.06em;
 }
 
 .contain-nav .x-close {
@@ -225,6 +248,12 @@ a:hover {
   padding-left: 1.5em;
   width: 39.5%;
   color: var(--primary-color);
+}
+
+.speaker-info strong {
+  font-size: 1.4rem;
+  font-weight: var(--black-weight);
+  letter-spacing: 0.01em;
 }
 
 .contain-nav .logo strong {
@@ -387,6 +416,15 @@ a:hover {
   border: 1px solid var(--primary-color);
 }
 
+.partners-logos ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
 #program ul {
   display: flex;
   flex-direction: column;
@@ -412,6 +450,12 @@ a:hover {
   border: 2px solid #fff;
 }
 
+.speaker-info span {
+  font-size: 1.06rem;
+  font-weight: var(--bold-weight);
+  color: var(--primary-color);
+}
+
 #program ul li span {
   display: inline-block;
   width: 8.5%;
@@ -422,6 +466,22 @@ a:hover {
   font-size: 1.1rem;
   font-weight: var(--black-weight);
   width: 20%;
+}
+
+.speaker-info p {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+#footer p {
+  width: 40%;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: var(--bold-weight);
+}
+
+#about article p {
+  position: absolute;
 }
 
 #program ul li p {
@@ -446,7 +506,6 @@ a:hover {
 }
 
 #speakers ul li.speaker,
-.btn-less,
 .hide {
   display: none;
 }
@@ -492,39 +551,10 @@ a:hover {
   width: 65%;
 }
 
-.speaker-info strong {
-  font-size: 1.4rem;
-  font-weight: var(--black-weight);
-  letter-spacing: 0.01em;
-}
-
-.speaker-info span {
-  font-size: 1.06rem;
-  font-weight: var(--bold-weight);
-  color: var(--primary-color);
-}
-
-.speaker-info p {
-  font-size: 1rem;
-  line-height: 1.4rem;
-}
-
 #speakers .speaker-dash {
   width: 8%;
   margin: 0.6em 0;
   border: 1px solid var(--light-gray-color);
-}
-
-.btn-more,
-.btn-less {
-  text-transform: uppercase;
-  width: 100%;
-  margin: 0;
-  background-color: transparent;
-  border: 2px solid var(--light-gray-color);
-  color: var(--secondary-color);
-  font-size: 1rem;
-  padding: 1em;
 }
 
 .btn-more .arrow-icon::after,
@@ -563,25 +593,31 @@ a:hover {
   margin: 2em 1em;
 }
 
-.partners-logos ul {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
-}
-
 .partners-logos .partner-logo {
   display: inline-block;
   width: 28%;
   padding: 0.3em;
 }
 
+.show-logo img {
+  max-width: 70%;
+  transition: all 250ms ease-out;
+}
+
+.show-logo img:hover {
+  filter: saturate(2);
+  scale: 1.05;
+}
+
 #partners img {
   width: 100%;
   filter: saturate(0);
   transition: all 200ms ease-in-out;
+}
+
+#footer img {
+  width: 15%;
+  padding: 0.5em;
 }
 
 #partners img:hover {
@@ -600,18 +636,6 @@ a:hover {
   gap: 1em;
   justify-content: center;
   align-items: center;
-}
-
-#footer img {
-  width: 15%;
-  padding: 0.5em;
-}
-
-#footer p {
-  width: 40%;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  font-weight: var(--bold-weight);
 }
 
 /* LOGO ABOUT IN ABOUT PAGE STYLES */
@@ -657,16 +681,6 @@ a:hover {
   filter: saturate(2);
 }
 
-.show-logo img {
-  max-width: 70%;
-  transition: all 250ms ease-out;
-}
-
-.show-logo img:hover {
-  filter: saturate(2);
-  scale: 1.05;
-}
-
 #about .previous-events {
   width: 95%;
   margin: 2.5em auto 1em auto;
@@ -702,8 +716,7 @@ a:hover {
 }
 
 #about article h3,
-#about article h4,
-#about article p {
+#about article h4 {
   position: absolute;
 }
 
@@ -770,7 +783,8 @@ a:hover {
 @media screen and (min-width: 768px) {
   /* GENERAL SETTINGS */
   .container {
-    max-width: min(90%, 30rem);
+    width: 90%;
+    max-width: 30rem;
     padding: 0 5%;
   }
 
@@ -780,9 +794,25 @@ a:hover {
     background-color: var(--secondary-color);
   }
 
+  .btn-more,
+  .btn-less {
+    display: none;
+  }
+
+  .contain-nav li a {
+    border-bottom: none;
+    letter-spacing: normal;
+    color: var(--secondary-color);
+    font-weight: var(--bold-weight);
+    font-size: 0.5rem;
+    padding: 0;
+    text-align: center;
+  }
+
   .burguer-nav,
   .contain-nav .x-close a,
   #home .go-home,
+  #home .go-join,
   #home .go-info,
   #home .go-contact,
   #home .go-logo,
@@ -805,7 +835,8 @@ a:hover {
 
   .mini-nav,
   .main-nav {
-    max-width: min(90%, 30rem);
+    width: 90%;
+    max-width: 30rem;
   }
 
   .mini-nav ul,
@@ -817,6 +848,10 @@ a:hover {
     padding: 0.01em 0;
     justify-content: flex-end;
     align-items: center;
+  }
+
+  .contain-nav li {
+    height: auto;
   }
 
   .mini-nav ul li {
@@ -832,12 +867,6 @@ a:hover {
     padding: 0.1em;
   }
 
-  .mini-nav a {
-    color: #fff;
-    padding: 0.1em;
-    align-content: center;
-  }
-
   .mini-nav a:hover {
     color: var(--primary-color);
     filter: saturate(3);
@@ -846,6 +875,11 @@ a:hover {
 
   .mini-nav img {
     display: inline-block;
+  }
+
+  .speaker-photo img {
+    top: 0.4em;
+    left: 0.4em;
   }
 
   .mini-nav img:hover {
@@ -875,21 +909,6 @@ a:hover {
   .contain-nav ul {
     flex-direction: row;
     margin-top: 0;
-  }
-
-  .contain-nav li {
-    height: auto;
-  }
-
-  .contain-nav li a {
-    border-bottom: none;
-    color: initial;
-    letter-spacing: normal;
-    color: var(--secondary-color);
-    font-weight: var(--bold-weight);
-    font-size: 0.5rem;
-    padding: 0;
-    text-align: center;
   }
 
   .contain-nav li a:hover {
@@ -933,6 +952,10 @@ a:hover {
     margin-right: 0.25rem;
   }
 
+  .speaker-info strong {
+    font-size: 0.8rem;
+  }
+
   .contain-nav .logo strong {
     font-weight: var(--bold-weight);
     color: var(--primary-color);
@@ -958,7 +981,8 @@ a:hover {
   }
 
   .banner .event-text {
-    max-width: min(40rem, 75%);
+    width: 75%;
+    max-width: 40rem;
     font-size: 0.65rem;
     line-height: 0.9rem;
   }
@@ -985,6 +1009,10 @@ a:hover {
   }
 
   /* PROGRAM STYLES FOR DESKTOP */
+  .partners-logos ul {
+    flex-wrap: nowrap;
+  }
+
   #program ul {
     flex-direction: row;
     gap: 0.15rem;
@@ -1001,6 +1029,10 @@ a:hover {
     gap: 0.01em;
   }
 
+  .speaker-info span {
+    font-size: 0.6rem;
+  }
+
   #program ul li span {
     display: block;
     width: 25%;
@@ -1010,6 +1042,17 @@ a:hover {
     width: 100%;
     text-align: center;
     font-size: 0.5rem;
+  }
+
+  .speaker-info p {
+    font-size: 0.5rem;
+    line-height: 0.7rem;
+  }
+
+  #footer p {
+    width: 30%;
+    font-size: 0.6rem;
+    line-height: 0.7rem;
   }
 
   #program ul li p {
@@ -1073,44 +1116,17 @@ a:hover {
     width: 2rem;
   }
 
-  .speaker-photo img {
-    top: 0.4em;
-    left: 0.4em;
-  }
-
   #speakers .speaker .speaker-info {
     width: 68%;
-  }
-
-  .speaker-info strong {
-    font-size: 0.8rem;
-  }
-
-  .speaker-info span {
-    font-size: 0.6rem;
-  }
-
-  .speaker-info p {
-    font-size: 0.5rem;
-    line-height: 0.7rem;
   }
 
   #speakers .speaker-dash {
     margin: 0.3em 0;
   }
 
-  .btn-more,
-  .btn-less {
-    display: none;
-  }
-
   /* PARTNERS STYLES FOR DESKTOP */
   .partners-logos {
     margin: 1em 0.5em;
-  }
-
-  .partners-logos ul {
-    flex-wrap: nowrap;
   }
 
   .partners-logos .partner-logo {
@@ -1191,12 +1207,6 @@ a:hover {
   #footer img {
     width: 10%;
     padding: 0.2em;
-  }
-
-  #footer p {
-    width: 30%;
-    font-size: 0.6rem;
-    line-height: 0.7rem;
   }
 
   /* FOOTER AT ABOUT PAGE STYLES */
