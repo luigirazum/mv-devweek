@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Attach styles.css file for applying CSS styles -->
   <link rel="stylesheet" href="assets/styles.css">
-  <title>DevWeek - Conferences & Events</title>
+  <title>DevWeek - About</title>
 </head>
-<body id="home">
+<body id="about">
   <!-- HEADER: Navegation -->
   <header id="header">
     <!--Burger icon for mobile version-->
@@ -100,21 +100,35 @@
   <main id="headline">
     <div class="banner">
       <div class="container">
-        <p class="slogan">
+        <p class="slogan mobile">
           < Learn. Connect. Experience />
         </p>
-        <h1 class="event-title">DEVELOPER WEEK<br>GLOBAL SUMMIT<br>2022</h1>
-        <p class="event-text">
-          Join 8,000+ professionals at the World's Largest Developer &
-          Engineering Expo + Conference Series to discover the latest in
-          developer technologies, languages, platforms, and tools.
+        <h1 class="event-title">DEVELOPER WEEK<br>GLOBAL SUMMIT 2022</h1>
+        <hr class="desktop">
+        <p class="event-text mobile">
+          DevWeek puts the spotlight on new technologies. Companies that
+          participated in past DevWeek events include Google,
+          Facebook, Yelp, Rackspace, IBM, Cloudera, Red Hat, Optimizely,
+          SendGrid, Blackberry, Microsoft, Neo Technology, Eventbrite,
+          Klout, Built.io, Ripple, GNIP, Tagged, HackReactor, and 30+
+          more here!
         </p>
-        <p class="event-date">
-          2022.09.19(THU) ~ 23(FRI)
+        <p class="event-text desktop">
+          DevWeek 2022 is the largest developer conference & event series
+          including the DevWeek 2022 Conference & Expo, 1,000+ attendee
+          hackathon, 800+ attendee tech hiring expo, and a series of
+          workshops, technical talks, and keynotes.<br>
+          Because DevWeek covers all new technologies, our conference
+          and workshops invite you to get intro lessons (or advanced tips
+          and tricks) on technologies like VR Dev, Artificial Intelligence
+          Dev, Blockchain Dev, IoT Dev, Serverless technology, Microservices
+          technology, new JavaScript frameworks, and more.
         </p>
         <p class="event-place">
-          @ Oakland Convention Center, Californa USA
+          Please contact us per Email for any further questions
+          about DW Global Summit 2022!
         </p>
+        <a id="contact" class="email-link" href="mailto:dwsummit2022@devweek.dev">dwsummit2022@devweek.dev</a>
 
       </div>
       <!--EOF .container -->
@@ -122,81 +136,60 @@
     <!--EOF .banner -->
   </main>
 
-  <!--MAIN PROGRAM SECTION-->
-  <section id="program">
+  <!--LOGO ABOUT-->
+  <section id="logo-about">
     <div class="container">
-      <h2>Main Program</h2>
+      <h2 class="section-title">DevWeek Logo <br>How was DW Logo chosen</h2>
       <hr>
-      <ul>
-        <li>
-          <span>
-            <img src="./assets/icons/lecture-icon.svg" alt="">
-          </span>
-          <strong>Lecture</strong>
-          <p>
-            Listen to the speakers from various
-            countries about how the new technologies
-            are improving software.
-          </p>
-        </li> <!--EOF Lecture-->
-        <li>
-          <span>
-            <img src="./assets/icons/exhibition-icon.svg" alt="">
-          </span>
-          <strong>DW Exhibition</strong>
-          <p>
-            Take a look at the latest releases for
-            the most used programming languages.
-          </p>
-        </li> <!--EOF Exhibitions-->
-        <li>
-        <span>
-            <img src="./assets/icons/forum-icon.svg" alt="">
-          </span>
-          <strong>Forum</strong>
-          <p>
-            Have time to share your thoughts and
-            opinions with experts for each topic.
-          </p>
-        </li> <!--EOF Forum-->
-        <li>
-          <span>
-            <img src="./assets/icons/workshop-icon.svg" alt="">
-          </span>
-          <strong>Workshop</strong>
-          <p>
-            Try creating your own projects using
-            open source software rather than just
-            watching.
-          </p>
-        </li> <!--EOF Workshop-->
-        <li>
-          <span>
-            <img src="./assets/icons/networking-icon.svg" alt="">
-          </span>
-          <strong>DW Ignite</strong>
-          <p>
-            Get opportunities to network with DW
-            affiliates around the world, also after
-            the summit.
-          </p>
-        </li> <!--EOF Ignites-->
-      </ul>
-      <a class="btn btn-join" href="#" id="join-button"></a>
-    </div> <!--EOF .container-->
+      <p class="about-text">
+        The logo of DevWeek was decided through the logo competition from 10.Jan to 10.Feb.
+      </p>
+      <p class="about-text desktop">
+        After online public voting and Selection Committee's judging process,
+        the logo created by Justin Leitner won the prize.
+      </p>
+      <p class="about-text desktop">After consultation with the Selection Committee we optimized the
+        prize-winning-logo, so it could be the Oficial DW Logo for the rest
+        of the year or until another public competition is open.
+      </p>
+      <div class="show-logo">
+        <img src="./assets/logos/devweek-logo.png" alt="DevWeek Logo">
+      </div>
+      <p class="about-text">
+        <small>Please do not edit, change, distort, recolor, or reconfigure the DW Logo.</small>
+      </p>
+    </div>
   </section>
 
-  <!--FEATURED SPEAKERS-->
-  <section id="speakers">
+  <section id="dw-editions">
     <div class="container">
-      <h2>Featured Speakers</h2>
+      <h2 class="section-title">Previous DW Global Summits</h2>
       <hr>
-      <ul id="speakers-list"></ul>
-      <a class="btn btn-more"><span class="arrow-icon"></span></a>
-      <a class="btn btn-less"><span class="arrow-icon"></span></a>
-    </div> <!--EOF .container-->
+      <p class="about-text">Take a look at the last DW Global Summits which took place in New York and in Las Vegas.</p>
+      <div class="previous-events"">
+        <article>
+          <img class="img-previous" src="./assets/imgs/ny-dw-conf-2021.jpg" alt="New York Global Summit 2021">
+          <h3 class="hide-text">2021</h3>
+          <h4 class="hide-text">DW Global Summit 2021 New York</h4>
+          <p class="about-text hidden-text">
+            Listen to exciting product updates, keynotes, panels featuring some of
+            the most prominent people in the developer tools ecosystem, along with
+            fireside chats and expert insights.
+          </p>
+        </article>
+        <article>
+          <img class="img-previous" src="./assets/imgs/lv-dw-conf-2020.jpg" alt="Las Vegas Global Summit 2020">
+          <h3 class="hide-text">2020</h3>
+          <h4 class="hide-text">DW Global Summit 2020 Las Vegas</h4>
+          <p class="about-text hidden-text">
+            A transformative peer-to-peer learning and networking experience, you
+            can expect to hear participants share their own stories, lessons, and
+            project insights.
+          </p>
+        </article>
+      </div>
+    </div>
   </section>
-
   <!--PARTNERS-->
   <section id="partners">
     <div class="container">
@@ -228,17 +221,16 @@
   <footer id="footer">
     <div class="container">
       <div class="footer-text">
-        <span>
-         <img class="img-logo" src="./assets/logos/dev-week-logo.svg" alt="DevWeek Logo">
-         Dev<strong>Week</strong>
-       </span>
-       <p>2022 DevWeek <br> Some Rights Reserved.</p>
-     </div>
+         <span>
+          <img class="img-logo" src="./assets/logos/dev-week-logo.svg" alt="DevWeek Logo">
+          Dev<strong>Week</strong>
+        </span>
+        <p>2022 DevWeek <br> Some Rights Reserved.</p>
+      </div>
     </div> <!--EOF .container-->
   </footer>
 
   <!-- Attach scripts.js file for adding interactivity features -->
   <script src="assets/scripts.js"></script>
-
 </body>
 </html>

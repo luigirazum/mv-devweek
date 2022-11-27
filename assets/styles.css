@@ -1,1 +1,1231 @@
 /* This is the main styles file for the DevWeek project */
+
+/* INSTALL Lato FONT */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* GLOBAL VARIABLES */
+:root {
+  /* Define the primary font */
+  --primary-font: 'Lato', sans-serif;
+
+  font-size: calc(16px + (42 - 16) * ((100vw - 375px) / (1800 - 375)));
+
+  /* font-size: 62.5%; */
+
+  /* Define different font weights */
+  --light-weight: 300;
+  --regular-weight: 400;
+  --bold-weight: 700;
+  --black-weight: 900;
+
+  /* Define the color pallete */
+  --primary-color: rgb(214, 74, 52);
+  --light-primary-color: #d88567;
+  --secondary-color: #303136;
+  --gray-color: #949597;
+  --light-gray-color: #c1c2c4;
+  --very-light-gray-color: #efefef;
+  --light-white-color: #f5f5f5;
+  --almost-white-color: #fcfcfc;
+}
+
+/* RESET DEFAULT BROWSER STYLES */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GENERAL SETTINGS */
+html {
+  font-family: var(--primary-font);
+  background-color: var(--light-white-color);
+}
+
+/* body {
+  font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw -
+  [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+} */
+
+body {
+  color: var(--secondary-color);
+  min-width: 30rem;
+}
+
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: var(--bold-weight);
+  font-size: 0.45rem;
+  padding: 0.5rem;
+  display: inline-block;
+  transition: all 200ms ease-out;
+}
+
+a:hover {
+  color: var(--primary-color);
+  filter: saturate(4);
+  scale: 1.05;
+}
+
+.btn {
+  width: 85%;
+  background-color: var(--primary-color);
+  text-decoration: none;
+  color: #fff;
+  font-weight: var(--bold-weight);
+  font-size: 1.2rem;
+  padding: 1.8em 3em;
+  margin: 2.5em auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-out;
+}
+
+.btn-join {
+  letter-spacing: 0.015em;
+}
+
+.btn-join::after {
+  content: "Join DW Global Summit 2022";
+}
+
+.btn-join:hover {
+  background-color: var(--light-gray-color);
+  color: var(--primary-color);
+  scale: none;
+}
+
+.btn-more::before {
+  content: "More";
+}
+
+.btn-less::before {
+  content: "Less";
+}
+
+.btn-less {
+  display: none;
+}
+
+.btn-more,
+.btn-less {
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid var(--light-gray-color);
+  color: var(--secondary-color);
+  font-size: 1rem;
+  padding: 1em;
+}
+
+.btn-more:hover,
+.btn-less:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+  filter: saturate(4);
+}
+
+/* NAVBAR STYLES */
+.burguer-nav {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.burguer-nav a {
+  width: 1.5rem;
+  padding: 0.1em;
+  margin: 1em;
+  filter: saturate(2.5);
+  cursor: pointer;
+}
+
+.mini-nav a {
+  color: #fff;
+  padding: 0.1em;
+  align-content: center;
+}
+
+.contain-nav li a {
+  display: block;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding: 0.5em 0 0.2em 0.6em;
+  color: var(--almost-white-color);
+  letter-spacing: 0.03em;
+  font-weight: var(--bold-weight);
+}
+
+.burguer-nav a:hover {
+  filter: grayscale(1);
+  scale: none;
+}
+
+.mini-nav ul,
+.main-nav ul {
+  display: none;
+}
+
+.contain-nav {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(214, 74, 52, 0.8);
+  backdrop-filter: blur(3px);
+  transition: all 250ms ease-out;
+}
+
+.contain-nav .main-nav {
+  width: 100%;
+}
+
+.contain-nav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  margin-top: 2.6em;
+}
+
+.contain-nav .x-close a {
+  border-bottom: none;
+  cursor: pointer;
+  position: absolute;
+  width: 2.2rem;
+  right: 0.6em;
+  top: -0.2em;
+}
+
+.contain-nav li a:hover {
+  background-color: rgba(48, 49, 54, 0.7);
+  padding-left: 1.5em;
+  letter-spacing: 0.06em;
+}
+
+.contain-nav .x-close a:hover {
+  background-color: transparent;
+  padding-left: 0.6em;
+  scale: none;
+  filter: opacity(0.9) invert(0.8);
+}
+
+.contain-nav .x-close {
+  width: 2rem;
+  padding: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: var(--black-weight);
+  font-size: 1.3rem;
+  padding: 0.5em;
+  width: 35%;
+  color: var(--almost-white-color);
+}
+
+.logo:hover {
+  scale: none;
+  padding-left: 1.5em;
+  width: 39.5%;
+  color: var(--primary-color);
+}
+
+.speaker-info strong {
+  font-size: 1.4rem;
+  font-weight: var(--black-weight);
+  letter-spacing: 0.01em;
+}
+
+.logo strong {
+  color: var(--secondary-color);
+}
+
+.logo .img-logo {
+  width: 25%;
+  margin-right: 0.2em;
+}
+
+.contain-nav .campaign,
+#about .go-program,
+#about .go-join,
+#about .go-news,
+#home .go-info,
+#home .go-contact,
+#home .go-logo,
+#home .go-editions {
+  display: none;
+}
+
+/* HEADLINE STYLES */
+.banner {
+  width: 100%;
+  background-image:
+    linear-gradient(
+      rgba(253, 253, 253, 0.88),
+      rgba(253, 253, 253, 0.88)
+    ),
+    url(./bgimgs/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5em 0 10em;
+}
+
+.banner h1 {
+  font-size: 2.6rem;
+  line-height: 2.7rem;
+  font-weight: var(--black-weight);
+  color: var(--primary-color);
+  letter-spacing: 0.005em;
+  background: url(./bgimgs/banner-inked.jpg);
+  background-position: -15% 55%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.banner .slogan {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: var(--bold-weight);
+  color: var(--primary-color);
+}
+
+.banner .event-text {
+  background-color: var(--very-light-gray-color);
+  border: 3px solid #fff;
+  padding: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  margin: 1em 0;
+}
+
+.banner .event-date {
+  font-size: 1.8rem;
+  font-weight: var(--black-weight);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.banner .event-place {
+  font-size: 1rem;
+  font-weight: var(--bold-weight);
+}
+
+/* HEADLINE AT ABOUT PAGE STYLES */
+#about .banner {
+  background-image:
+    linear-gradient(
+      rgba(253, 253, 253, 0.88),
+      rgba(253, 253, 253, 0.88)
+    ),
+    url(./imgs/bd-dw-conf-2019.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40%;
+  text-align: center;
+  padding: 8em 0 3em;
+}
+
+#about .slogan {
+  text-align: center;
+}
+
+#about .banner h1 {
+  background: none;
+  -webkit-text-fill-color: initial;
+  text-align: center;
+}
+
+#about .event-text {
+  background-color: var(--almost-white-color);
+  border: 3px solid var(--light-gray-color);
+  line-height: 1.6rem;
+  margin: 3em 0 2em 0;
+}
+
+#about .desktop {
+  display: none;
+}
+
+#about .event-place,
+#about .about-text {
+  font-weight: var(--regular-weight);
+  font-size: 0.75rem;
+  line-height: 1.3rem;
+  padding: 0 6em;
+}
+
+#about .email-link {
+  font-size: 0.8rem;
+  font-weight: var(--black-weight);
+  text-decoration: underline;
+}
+
+#about .email-link:hover {
+  color: var(--primary-color);
+  filter: saturate(2);
+}
+
+/* MAIN PROGRAM STYLES */
+#program {
+  background-color: var(--secondary-color);
+  padding: 2rem 0;
+  color: var(--light-gray-color);
+}
+
+#program h2,
+#speakers h2,
+#partners h2,
+#about .section-title {
+  color: #fff;
+  font-weight: var(--bold-weight);
+  text-align: center;
+  padding: 0.7em;
+}
+
+#program hr,
+#speakers hr,
+#partners hr,
+#about hr {
+  width: 10%;
+  margin: 0 auto;
+  border: 1px solid var(--primary-color);
+}
+
+.partners-logos ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+#program ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 2.5rem auto;
+}
+
+#program ul li {
+  list-style: none;
+  height: 6rem;
+  padding: 1.5em;
+  background-color: rgba(253, 253, 253, 0.05);
+  display: flex;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  align-items: center;
+  gap: 1em;
+  transition: all 150ms ease-in-out;
+}
+
+#program ul li:hover {
+  scale: 1.02;
+  border: 2px solid #fff;
+}
+
+.speaker-info span {
+  font-size: 1.06rem;
+  font-weight: var(--bold-weight);
+  color: var(--primary-color);
+}
+
+#footer span {
+  font-size: 1.2rem;
+  display: flex;
+  width: 45%;
+  align-items: center;
+}
+
+#program ul li span {
+  display: inline-block;
+  width: 8.5%;
+}
+
+#footer strong {
+  color: var(--primary-color);
+  filter: saturate(2);
+}
+
+#program ul li strong {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: var(--black-weight);
+  width: 20%;
+}
+
+.speaker-info p {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+#footer p {
+  width: 40%;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: var(--bold-weight);
+}
+
+#about article p {
+  position: absolute;
+}
+
+#program ul li p {
+  width: 65%;
+}
+
+/* FEATURED SPEAKERS STYLES */
+#speakers {
+  padding: 2rem 0 3rem;
+}
+
+#speakers h2 {
+  color: var(--secondary-color);
+}
+
+#speakers ul {
+  list-style: none;
+  padding: 3rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#speakers ul li.speaker,
+.hide {
+  display: none;
+}
+
+#speakers ul li.speaker:nth-child(-n+2) {
+  display: flex;
+}
+
+#speakers ul li.speaker.show,
+.btn-less.show {
+  display: flex;
+}
+
+#speakers .speaker {
+  height: 15rem;
+  justify-content: space-between;
+}
+
+#speakers .speaker .speaker-photo {
+  width: 28%;
+  position: relative;
+}
+
+.speaker-photo .squares {
+  height: 4rem;
+  width: 4rem;
+  background-image: url(./bgimgs/pattern.svg);
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.speaker-photo img {
+  position: absolute;
+  top: 0.95em;
+  left: 0.95em;
+}
+
+#speakers .speaker .speaker-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 65%;
+}
+
+#speakers .speaker-dash {
+  width: 8%;
+  margin: 0.6em 0;
+  border: 1px solid var(--light-gray-color);
+}
+
+.btn-more .arrow-icon::after,
+.btn-less .arrow-icon::after {
+  display: inline-block;
+  content: "";
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5em;
+}
+
+.btn-more .arrow-icon::after {
+  background: url('./icons/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-less .arrow-icon::after {
+  background: url('./icons/arrow-up.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* PARTNERS STYLES */
+#partners {
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
+}
+
+#partners h2 {
+  color: #fff;
+}
+
+.partners-logos {
+  justify-content: space-evenly;
+  margin: 2em 1em;
+}
+
+.partners-logos .partner-logo {
+  display: inline-block;
+  width: 28%;
+  padding: 0.3em;
+}
+
+.show-logo img {
+  max-width: 70%;
+  transition: all 250ms ease-out;
+}
+
+.show-logo img:hover {
+  filter: saturate(2);
+  scale: 1.05;
+}
+
+#partners img {
+  width: 100%;
+  filter: saturate(0);
+  transition: all 200ms ease-in-out;
+}
+
+#footer img {
+  width: 25%;
+  padding: 0.4em;
+}
+
+#partners img:hover {
+  scale: 1.2;
+  filter: saturate(1);
+}
+
+/* FOOTER STYLES */
+#footer {
+  padding: 2rem 0;
+}
+
+#footer .footer-text {
+  display: flex;
+  width: 100%;
+  gap: 1em;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* LOGO ABOUT IN ABOUT PAGE STYLES */
+#about #logo-about,
+#about #dw-editions {
+  background-color: var(--almost-white-color);
+  padding: 2rem 0 3rem;
+  border-bottom: 2px solid var(--very-light-gray-color);
+}
+
+#about .section-title {
+  color: var(--secondary-color);
+}
+
+#about hr {
+  width: 6%;
+  margin-bottom: 1em;
+}
+
+#about .about-text {
+  text-align: center;
+  padding: 0 5em;
+}
+
+#about small {
+  font-weight: var(--bold-weight);
+}
+
+#about .show-logo {
+  display: flex;
+  border: 2px solid var(--very-light-gray-color);
+  height: 9rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2.5em 1.7em;
+  margin: 2em 0 1em 0;
+  transition: all 250ms ease-in;
+}
+
+#about .show-logo:hover {
+  border: 2px solid var(--primary-color);
+  filter: saturate(2);
+}
+
+#about .previous-events {
+  width: 95%;
+  margin: 2.5em auto 1em auto;
+  display: flex;
+  gap: 1.5em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about article {
+  width: 90%;
+  height: 45vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#about article .img-previous {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  filter:
+    sepia(100%)
+    saturate(350%)
+    brightness(45%)
+    hue-rotate(320deg)
+    opacity(0.75)
+    drop-shadow(0 0 0 rgb(255, 38, 0));
+}
+
+#about article h3,
+#about article h4 {
+  position: absolute;
+}
+
+#about article h3 {
+  width: 90%;
+  font-weight: var(--black-weight);
+  font-size: 1.9em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -105%);
+}
+
+#about article h4 {
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 60%);
+}
+
+#about .previous-events .about-text {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  padding: 0 1.2em;
+}
+
+#about .previous-events .hidden-text {
+  font-weight: var(--bold-weight);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.02em;
+  color: transparent;
+  transition: all 350ms ease;
+}
+
+#about article:hover .hidden-text {
+  color: var(--secondary-color);
+  filter: contrast(250%);
+}
+
+#about .previous-events .hide-text {
+  color: var(--almost-white-color);
+  transition: all 250ms ease;
+}
+
+#about article:hover .hide-text {
+  color: transparent;
+}
+
+#about article:hover .img-previous {
+  filter:
+    sepia(100%)
+    saturate(350%)
+    brightness(45%)
+    hue-rotate(320deg)
+    opacity(0.4)
+    drop-shadow(0 0 0 rgb(210, 210, 210));
+}
+
+/* MEDIA QUERIES START HERE */
+
+/* Styles for 768px and above screen size */
+@media screen and (min-width: 768px) {
+  /* GENERAL SETTINGS */
+  .container {
+    width: 90%;
+    max-width: 30rem;
+    padding: 0 5%;
+  }
+
+  /* HEADER SECTION */
+
+  #header {
+    background-color: var(--secondary-color);
+  }
+
+  .btn-more,
+  .btn-less {
+    display: none;
+  }
+
+  .contain-nav li a {
+    border-bottom: none;
+    letter-spacing: normal;
+    color: var(--secondary-color);
+    font-weight: var(--bold-weight);
+    font-size: 0.5rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  .burguer-nav,
+  .contain-nav .x-close a,
+  #home .go-home,
+  #home .go-join,
+  #home .go-info,
+  #home .go-contact,
+  #home .go-logo,
+  #home .go-editions,
+  #about .go-about,
+  #about .go-program,
+  #about .go-join,
+  #about .go-news,
+  #about .go-partners,
+  #speakers .btn-less,
+  #speakers .btn-more {
+    display: none;
+  }
+
+  nav {
+    list-style: none;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .mini-nav,
+  .main-nav {
+    width: 90%;
+    max-width: 30rem;
+  }
+
+  .mini-nav ul,
+  .main-nav ul {
+    display: flex;
+  }
+
+  .mini-nav ul {
+    padding: 0.01em 0;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .contain-nav li {
+    height: auto;
+  }
+
+  .mini-nav ul li {
+    height: 1rem;
+    width: 2rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .mini-nav .sm-icon {
+    width: 0.8rem;
+    padding: 0.1em;
+  }
+
+  .mini-nav a:hover {
+    color: var(--primary-color);
+    filter: saturate(3);
+    scale: none;
+  }
+
+  .mini-nav img {
+    display: inline-block;
+  }
+
+  .speaker-photo img {
+    top: 0.4em;
+    left: 0.4em;
+  }
+
+  .mini-nav img:hover {
+    filter: invert(1);
+    scale: none;
+  }
+
+  .main-nav ul {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contain-nav {
+    display: flex;
+    position: initial;
+    width: 100%;
+    height: auto;
+    z-index: auto;
+    background-color: var(--almost-white-color);
+    backdrop-filter: none;
+  }
+
+  .contain-nav .x-close a {
+    display: none;
+  }
+
+  .contain-nav ul {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .contain-nav li a:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+    letter-spacing: normal;
+    padding: 0;
+    filter: saturate(4);
+  }
+
+  .contain-nav .logo {
+    font-weight: var(--black-weight);
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    padding: 0.3em;
+    width: 20%;
+    transition: scale 300ms ease-out;
+  }
+
+  .contain-nav .logo:hover {
+    filter: saturate(4);
+    width: 20%;
+    padding-left: 0.3em;
+    scale: 1.2;
+    color: var(--secondary-color);
+  }
+
+  .contain-nav .logo .img-logo {
+    margin-right: 0.2em;
+  }
+
+  .contain-nav span {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    background-image: url(./logos/dev-week-logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.25rem;
+  }
+
+  .speaker-info strong {
+    font-size: 0.8rem;
+  }
+
+  .contain-nav .logo strong {
+    font-weight: var(--bold-weight);
+    color: var(--primary-color);
+  }
+
+  .contain-nav .campaign {
+    display: inline-block;
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    text-align: center;
+    padding: 0.7em 0.5em;
+    transition: all 300ms ease-in-out;
+  }
+
+  .contain-nav .campaign:hover {
+    scale: 1.1;
+    filter: saturate(4);
+  }
+
+  /* HEADLINE STYLES FOR DESKTOP */
+  .banner {
+    padding: 4em 0 5em;
+  }
+
+  .banner .event-text {
+    width: 75%;
+    max-width: 40rem;
+    font-size: 0.65rem;
+    line-height: 0.9rem;
+  }
+
+  .banner .event-date {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .banner .event-place {
+    font-size: 0.75rem;
+  }
+
+  #about .banner {
+    padding: 4em 0;
+  }
+
+  #about .mobile {
+    display: none;
+  }
+
+  #about .desktop {
+    display: flex;
+  }
+
+  /* PROGRAM STYLES FOR DESKTOP */
+  .partners-logos ul {
+    flex-wrap: nowrap;
+  }
+
+  #program ul {
+    flex-direction: row;
+    gap: 0.15rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1.5rem auto;
+  }
+
+  #program ul li {
+    width: 19.5%;
+    min-height: 7rem;
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 0.01em;
+  }
+
+  .speaker-info span {
+    font-size: 0.6rem;
+  }
+
+  #program ul li span {
+    display: block;
+    width: 25%;
+  }
+
+  #program ul li strong {
+    width: 100%;
+    text-align: center;
+    font-size: 0.5rem;
+  }
+
+  .speaker-info p {
+    font-size: 0.5rem;
+    line-height: 0.7rem;
+  }
+
+  #footer p {
+    width: 30%;
+    font-size: 0.6rem;
+    line-height: 0.7rem;
+  }
+
+  #program ul li p {
+    width: 100%;
+    text-align: center;
+    font-size: 0.45rem;
+    line-height: 0.55rem;
+  }
+
+  .btn {
+    width: auto;
+    background-color: transparent;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #fff;
+    font-size: 0.6rem;
+    margin: 0 auto;
+  }
+
+  .btn-join {
+    padding: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-join::after {
+    content: "See the Whole Program";
+  }
+
+  .btn-join:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+
+  /* SEPEAKERS STYLES FOR DESKTOP */
+  #speakers {
+    padding: 2rem;
+  }
+
+  #speakers ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+
+  #speakers ul li.speaker {
+    display: flex;
+  }
+
+  #speakers .speaker {
+    width: 47.5%;
+    height: 8.5rem;
+  }
+
+  #speakers .speaker .speaker-photo {
+    width: 25%;
+  }
+
+  .speaker-photo .squares {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  #speakers .speaker .speaker-info {
+    width: 68%;
+  }
+
+  #speakers .speaker-dash {
+    margin: 0.3em 0;
+  }
+
+  /* PARTNERS STYLES FOR DESKTOP */
+  .partners-logos {
+    margin: 1em 0.5em;
+  }
+
+  .partners-logos .partner-logo {
+    width: 20%;
+    padding: 0.05em;
+  }
+
+  /* PARTNERS AT ABOUT PAGE STYLES */
+  #about #partners {
+    display: none;
+  }
+
+  #about {
+    font-size: initial;
+  }
+
+  #about .banner h1 {
+    font-size: 1.7rem;
+    line-height: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #about .banner .event-text {
+    max-width: 100%;
+    margin: 2em auto 3em auto;
+    font-size: 0.65rem;
+    line-height: 1rem;
+  }
+
+  #about .event-place,
+  #about .about-text {
+    font-size: initial;
+    line-height: 1.85em;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  #about h2 {
+    font-size: 1rem;
+  }
+
+  #about .show-logo {
+    height: 5rem;
+    max-width: 80%;
+    margin: 1.5em auto;
+  }
+
+  #about .previous-events {
+    width: 100%;
+    margin: 1.5em auto 0.5em auto;
+    gap: 1em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #about article {
+    width: 48%;
+    height: 30vh;
+  }
+
+  #about article h3 {
+    font-size: 1.3rem;
+  }
+
+  #about article h4 {
+    font-size: 0.6rem;
+  }
+
+  #about .previous-events .hidden-text {
+    font-size: 0.5rem;
+    line-height: 0.75rem;
+  }
+
+  /* FOOTER STYLES FOR DESKTOP */
+  #footer .footer-text {
+    gap: 0.5em;
+  }
+
+  #footer img {
+    width: 20%;
+    padding: 0.2em;
+  }
+
+  /* FOOTER AT ABOUT PAGE STYLES */
+  #about #footer {
+    background-color: var(--secondary-color);
+    color: var(--almost-white-color);
+  }
+}
